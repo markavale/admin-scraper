@@ -2,7 +2,10 @@
 
 ## Project Details
 This Template includes dj-rest-auth for authentication and Token authentication.
- Markup : * Bullet list
+Markup : * Bullet list
+             * Nested bullet
+                 * Sub-nested bullet etc
+         * Bullet list item 2
 
 ## Project setup for virtualenv users
 ```
