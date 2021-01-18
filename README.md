@@ -16,7 +16,7 @@ python manage.py migrate
 pipenv shell
 pipenv install
 python manage.py migrate
-  -test
+ Markup : * Bullet list
 ```
 
 ## Create .env file for your env variables
