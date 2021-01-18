@@ -2,7 +2,7 @@
 
 ## Project Details
 This Template includes dj-rest-auth for authentication and Token authentication.
-
+ Markup : * Bullet list
 
 ## Project setup for virtualenv users
 ```
@@ -16,7 +16,7 @@ python manage.py migrate
 pipenv shell
 pipenv install
 python manage.py migrate
- Markup : * Bullet list
+
 ```
 
 ## Create .env file for your env variables
