@@ -19,14 +19,14 @@ python manage.py migrate
 
 ```
 
-## Create .env file for your env variables
+## Create .env file for your env variables(Copy paste the details below and replace it with your own env variables)
 ```
-Copy paste this and replace it with your own variables
+
 [settings]
 SECRET_KEY = 'your awesome secret key'
 DJANGO_SETTINGS_MODULE = 'base.settings.dev'
 
-[mysql-database-config] if you're using mysql
+[sql-database-config]
 NAME=your_db_name
 USER=your_db_user
 PASSWORD=your_db_password
