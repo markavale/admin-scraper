@@ -40,14 +40,14 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://markanthonyvale.herokuapp.com',
-    'https://admin-mav.herokuapp.com',
+    'https://markanthonyvale.herokuapp.com', # 
+    'https://admin-mav.herokuapp.com', # 
 ]
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ORIGIN_WHITELIST = [
-    'https://markanthonyvale.herokuapp.com',
-    'https://admin-mav.herokuapp.com',
-]
+    'https://markanthonyvale.herokuapp.com', # 
+    'https://admin-mav.herokuapp.com', # 
+] 
 
 TEMPLATES = [
     {

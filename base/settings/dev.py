@@ -8,23 +8,23 @@ DEBUG = True
 
 WSGI_APPLICATION = 'base.wsgi.dev.application'
 
-DATABASES = {
-    'default': {
-    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': config('NAME_PS'),
-    'USER':config('USER_PS'),
-    'PASSWORD': config('PASSWORD_PS'),
-    'HOST': config('HOST_PS'),
-    'PORT': config('PORT_PS', cast=int),
-    }
-}
+#DATABASES = {
+#    'default': {
+#    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#    'NAME': config('NAME_PS'),
+#    'USER':config('USER_PS'),
+#    'PASSWORD': config('PASSWORD_PS'),
+#    'HOST': config('HOST_PS'),
+#    'PORT': config('PORT_PS', cast=int),
+#    }
+#}
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+     'default': {
+         'ENGINE': 'django.db.backends.sqlite3',
+         'NAME': BASE_DIR / 'db.sqlite3',
+     }
+}
 
 # DATABASES = {
 #     'default': {

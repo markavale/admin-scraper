@@ -12,6 +12,7 @@ urlpatterns = [
     path('auth/', include('users.urls')),
     path('api/', include('analytics.urls')),
     path('api/', include("marketing.urls")),
+    path('api/', include("scraper.urls")),
     # path('account/', include('allauth.urls')),
 ]
 
