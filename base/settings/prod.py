@@ -4,7 +4,7 @@ import dj_database_url
 from .base import *
 
 DEBUG = False
-ALLOWED_HOSTS += [ 'markanthonyvale.herokuapp.com'] # PUT HERE YOUR DOMAIN NAME WHEN YOU DEPLOY YOUR WEB APP
+ALLOWED_HOSTS += [ 'admin-scraper.herokuapp.com'] # PUT HERE YOUR DOMAIN NAME WHEN YOU DEPLOY YOUR WEB APP
 SECRET_KEY = config('SECRET_KEY')#
 WSGI_APPLICATION = 'base.wsgi.prod.application'
 
