@@ -14,9 +14,9 @@ from rest_framework.response import Response
 from django.core.exceptions import ObjectDoesNotExist
 
 
-@permission_classes([AllowAny])
+@permission_classes([IsAdminUser, IsAuthenticated,])
 @api_view(['POST', ])
-def scraper(request):
+def main_scraper(request):
     data = {}
     parsed_url, created = Spider.objects.get_or_create()
     return Response()
