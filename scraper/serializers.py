@@ -25,10 +25,8 @@ class ArticleSpiderSerializer(serializers.ModelSerializer):
 
 
 class ScraperSerializer(serializers.ModelSerializer):
-    spiders = ArticleSpiderSerializer(many=True, read_only=True)
-    total_errors = serializers.IntegerField(source='get_total_errors', read_only=True)
-    total_skips = serializers.IntegerField(source='get_total_avg_dl_latency', read_only=True)
-    total_dl_latency = serializers.FloatField(source='get_total_avg_dl_latency', read_only=True)
+    spiders = ArticleSpiderSerializer(many=True, read_only=False)
+    total_spiders = serializers.IntegerField(source='get_total_spiders', read_only=True)
 
 
     class Meta:

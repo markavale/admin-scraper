@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Navbar />
-    <v-container>
+    <!-- <Navbar /> -->
+    <v-container class="mt-10">
       <v-layout align-center justify-center>
         <v-flex xs12 sm8 md6>
           <v-card class="elevation-12" :disabled="loading" tile>
@@ -78,12 +78,12 @@
 </template>
 
 <script>
-import Navbar from "@/components/Navbar";
+// import Navbar from "@/components/Navbar";
 import PasswordReset from "@/components/auth/PasswordReset";
 export default {
   name: "Login",
   components: {
-    Navbar,
+    // Navbar,
     PasswordReset,
   },
   data() {

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Navbar />
-    <v-container  fill-height>
+    <!-- <Navbar /> -->
+    <v-container  fill-height class="mt-10">
       <v-layout align-center justify-center>
         <v-flex xs12 sm8 md6>
           <v-card class="elivation-12" :disabled="loading">
@@ -120,12 +120,12 @@
 </template>
 
 <script>
-import Navbar from "@/components/Navbar";
+// import Navbar from "@/components/Navbar";
 
 export default {
   name: "SignUp",
   components: {
-    Navbar,
+    // Navbar,
   },
   data: () => ({
     errors: [],

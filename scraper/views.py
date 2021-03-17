@@ -11,6 +11,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.viewsets import ModelViewSet
+import datetime
 # from . models import Scraper
 # from . serializers import ScraperSerializer
 
@@ -27,19 +28,34 @@ class ScraperViewset(viewsets.ModelViewSet):
     A simple ViewSet for viewing and editing the accounts
     associated with the user.
     """
+
+    def perform_create(self, serializer):
+
+        serializer.save(user=self.request.user)
+
     queryset = Scraper.objects.all()
     serializer_class = ScraperSerializer
     permission_classes = [IsAdminUser]
 
-
 @permission_classes([IsAdminUser])
 @api_view(['POST', ])
 def add_item_crawler(request):
+    date_now = datetime.datetime.now()
+    scraper = Scraper.objects.create(user= request.user, timestamp=date_now)
+    order.items.add(order_item)
+    data['message'] = f"{item.title} was added to your cart."
+    data['type'] = 'success'
+    print(f'{item.title} was added to your cart.')
+    return Response(data)
+
+@permission_classes([IsAdminUser])
+@api_view(['POST', ])
+def add_item_crawlers(request):
     data = {}
-    item = get_object_or_404(Item, slug=slug)
+    cr = get_object_or_404(Item, slug=slug)
     
     #create order item
-    order_item, created = OrderItem.objects.get_or_create(user = request.user, 
+    article_spider, created = ArticleSpider.objects.get_or_create(user = request.user, 
         item = item,
         is_ordered=False)
     # order_item.save()
