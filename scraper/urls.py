@@ -1,6 +1,10 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from . views import ScraperViewset
 
+router = DefaultRouter()
+router.register('scrapers', ScraperViewset)
 
 urlpatterns = [
-    # path('')
+    path('', include(router.urls)),
 ]

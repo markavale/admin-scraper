@@ -5,7 +5,6 @@ from dj_rest_auth.serializers import PasswordResetSerializer, LoginSerializer, P
 from rest_framework.authtoken.models import Token
 from users.models import User
 
-
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -13,7 +12,6 @@ class UserSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             'password': {'write_only': True, 'min_length': 8, 'max_length': 68}
             }
-
 
 class RegisterUserSerializer(serializers.ModelSerializer):
     # password = serializers.CharField(
