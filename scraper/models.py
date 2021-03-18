@@ -64,7 +64,7 @@ class SpiderCrawler(models.Model):
     is_finished         = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.user.username
+        return "Spider"
 
     def get_total_crawlers(self):
         return self.crawlers.count()
