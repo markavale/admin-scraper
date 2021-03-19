@@ -2,14 +2,14 @@ from rest_framework import serializers
 from . models import Scraper, ArticleSpider, SpiderCrawler, Crawler, CrawlerSet, CrawlerItem
 
 
-class CrawlerItemSerialier(serializers.ModelSerializer):
+class CrawlerItemSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CrawlerItem
         fields = '__all__'
 
 class CrawlerSetSerializer(serializers.ModelSerializer):
-    crawlers        = CrawlerItemSerialier(many=True, read_only=True)
+    crawlers        = CrawlerItemSerializer(many=True, read_only=True)
 
     class Meta:
         model = CrawlerSet
