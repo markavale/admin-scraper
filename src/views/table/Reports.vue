@@ -11,7 +11,7 @@
         <v-toolbar-title>Reports</v-toolbar-title>
         <v-divider class="mx-4" inset vertical></v-divider>
         <v-spacer></v-spacer>
-        <v-dialog v-model="dialog" max-width="500px">
+        <!-- <v-dialog v-model="dialog" max-width="500px">
           <template v-slot:activator="{ on, attrs }">
             <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on">
               New Item
@@ -65,7 +65,7 @@
               <v-btn color="blue darken-1" text @click="save"> Save </v-btn>
             </v-card-actions>
           </v-card>
-        </v-dialog>
+        </v-dialog> -->
         <v-dialog v-model="dialogDelete" max-width="500px">
           <v-card>
             <v-card-title class="headline"
@@ -109,7 +109,7 @@ export default {
     headers: [
       {
         text: "Total Articles",
-        align: "start",
+        align: "center",
         sortable: false,
         value: "name",
       },
@@ -117,6 +117,9 @@ export default {
       { text: "Spiders", value: "spider" },
       { text: "Thread spider", value: "thread_spider" },
       { text: "Article", value: "article" },
+      { text: "Download latency", value: "download_latency" },
+      { text: "Time finish", value: "time_finish" },
+      { text: "Date", value: "date" },
       { text: "Actions", value: "actions", sortable: false },
     ],
     desserts: [],
@@ -134,6 +137,7 @@ export default {
       spider: 0,
       thread_spider: 0,
       article: 0,
+      download_latency: 0,
     },
   }),
 
@@ -167,72 +171,102 @@ export default {
         {
           name: 518,
           parse: 159,
-          spider: 6.0,
+          spider: 6,
           thread_spider: 3,
-          article: 4.0,
+          article: 29,
+          download_latency: 3.21,
+          time_finish: "00:42:24",
+          date: "2021-03-16T10:38:17.488886+08:00",
         },
         {
           name: 518,
           parse: 237,
-          spider: 9.0,
+          spider: 6,
           thread_spider: 3,
-          article: 4.3,
+          article: 29,
+          download_latency: 0.32,
+          time_finish: "00:42:24",
+          date: "2021-03-16T10:38:17.488886+08:00",
         },
         {
           name: 518,
           parse: 262,
-          spider: 16.0,
+          spider: 6,
           thread_spider: 3,
-          article: 6.0,
+          article: 29,
+          download_latency: 14.42,
+          time_finish: "00:42:24",
+          date: "2021-03-16T10:38:17.488886+08:00",
         },
         {
           name: 518,
           parse: 305,
-          spider: 3.7,
+          spider: 6,
           thread_spider: 3,
-          article: 4.3,
+          article: 29,
+          download_latency: 0.32,
+          time_finish: "00:42:24",
+          date: "2021-03-16T10:38:17.488886+08:00",
         },
         {
           name: 518,
           parse: 356,
-          spider: 16.0,
+          spider: 6,
           thread_spider: 3,
-          article: 3.9,
+          article: 29,
+          download_latency: 2.32,
+          time_finish: "00:42:24",
+          date: "2021-03-16T10:38:17.488886+08:00",
         },
         {
           name: 518,
           parse: 375,
-          spider: 0.0,
+          spider: 6,
           thread_spider: 3,
-          article: 0.0,
+          article: 29,
+          download_latency: 15.52,
+          time_finish: "00:42:24",
+          date: "2021-03-16T10:38:17.488886+08:00",
         },
         {
           name: 518,
           parse: 392,
-          spider: 0.2,
+          spider: 6,
           thread_spider: 3,
-          article: 0,
+          article: 29,
+          download_latency: 1.41,
+          time_finish: "00:42:24",
+          date: "2021-03-16T10:38:17.488886+08:00",
         },
         {
           name: 518,
           parse: 408,
-          spider: 3.2,
+          spider: 6,
           thread_spider: 3,
-          article: 6.5,
+          article: 29,
+          download_latency: 5.21,
+          time_finish: "00:42:24",
+          date: "2021-03-16T10:38:17.488886+08:00",
         },
         {
           name: 518,
           parse: 452,
-          spider: 25.0,
+          spider: 6,
           thread_spider: 3,
-          article: 4.9,
+          article: 29,
+          download_latency: 3.12,
+          time_finish: "00:42:24",
+          date: "2021-03-16T10:38:17.488886+08:00",
         },
         {
           name: 518,
           parse: 518,
-          spider: 26.0,
+          spider: 6,
           thread_spider: 3,
-          article: 7,
+          article: 29,
+          download_latency: 19.41,
+          time_finish: "00:42:24",
+          date: "2021-03-16T10:38:17.488886+08:00",
         },
       ];
     },

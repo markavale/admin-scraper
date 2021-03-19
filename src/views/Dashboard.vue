@@ -8,7 +8,7 @@
               <div class="cyan fill-height">&nbsp;</div>
             </div>
             <div class="col pa-3 py-4 cyan--text">
-              <h5 class="text-truncate text-uppercase">Total parsed data</h5>
+              <h5 class="text-truncate text-uppercase">Total data</h5>
               <h1>
                 <!-- {{ getPageViews.total_views }} -->
                 5,180
@@ -141,14 +141,21 @@
           <v-card-title class="primary--text">Parsed Data</v-card-title>
           <v-sparkline
             :value="sparklineData"
-            padding="18"
+            :padding="padding"
             label-size="4"
-            color="cyan"
-            :gradient="['#007bff', 'cyan']"
-            :line-width="2"
-            :stroke-linecap="'round'"
-            smooth
+            :gradient="gradient"
+            :smooth="radius || false"
+            :line-width="width"
+            :stroke-linecap="lineCap"
+            :gradient-direction="gradientDirection"
+            :fill="fill"
+            :type="type"
+            :auto-line-width="autoLineWidth"
+            auto-draw
+            show-labels
           >
+          <!-- :stroke-linecap="lineCap"
+    :gradient-direction="gradientDirection" -->
             <!-- <template v-slot:label="item"> ${{ item.value }} </template> -->
             <template v-slot:label="item"> {{ item.value }} </template>
           </v-sparkline>
@@ -163,11 +170,31 @@
 
 <script>
 // import { mapGetters } from "vuex";
+const gradients = [
+    ['#222'],
+    ['#42b3f4'],
+    ['red', 'orange', 'yellow'],
+    ['purple', 'violet'],
+    ['#00c6ff', '#F0F', '#FF0'],
+    ['#f72047', '#ffd200', '#1feaea'],
+    ['#007bff', 'cyan'],
+    ['#01FFFF', '#00ECFA', '#00CEF1', '#00B8EA']
+  ]
 export default {
   name: "dashboard",
   data: () => ({
     // sparklineData: [423, 446, 675, 510, 590, 610, 423],
     sparklineData: [237, 262, 305, 356, 375, 392, 159, 408, 452, 518],
+    width: 2,
+    radius: 10,
+    padding: 8,
+    gradient: gradients[5],
+    gradientDirection: 'top',
+    gradients,
+    fill: false,
+    type: 'trend',
+    autoLineWidth: false,
+    lineCap: 'round',
   }),
   computed: {
     // ...mapGetters(["getPageViews", "getRatings"]),
