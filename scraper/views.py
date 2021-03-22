@@ -13,9 +13,9 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.viewsets import ModelViewSet
-from .pagination import CrawlerItemPagination, ScraperPagination
+from .pagination import CrawlerItemPagination, ScraperPagination, ArticleSpiderPagination, ArticleThreadPagination, ArticlePagination
 from django_filters.rest_framework import DjangoFilterBackend
-import datetime
+import datetime, time, json
 
 # @permission_classes([IsAdminUser, IsAuthenticated, ])
 # @api_view(['POST', ])
@@ -25,25 +25,112 @@ import datetime
 #     return Response()
 
 
+
+# CBV FOR ARTILCE SPIDER, ARTICLE THREAD, ARTICLE
+
+# CBV SCRAPER
 class ScraperViewset(viewsets.ModelViewSet):
-    """
-    A simple ViewSet for viewing and editing the accounts
-    associated with the user.
-    """
     pagination_class = ScraperPagination
     filter_backends = [DjangoFilterBackend,
                        filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = ['is_finished']
     search_fields = ['user', 'workers']
     ordering = ['user', 'time_finished']
-
-    def perform_create(self, serializer):
-
-        serializer.save(user=self.request.user)
-
-    queryset = Scraper.objects.all()
     serializer_class = ScraperSerializer
     permission_classes = [IsAdminUser]
+
+    def get_queryset(self):
+        return Scraper.objects.all()
+
+    def get_permissions(self):
+        # """
+        # Instantiates and returns the list of permissions that this view requires.
+        # """
+        if self.action == 'list':
+            permission_classes = [IsAuthenticated]
+        elif self.action == 'retrieve':
+            permission_classes = [IsAuthenticated]  # AllowAny
+        elif self.action == 'create':
+            permission_classes = [IsAdminUser]  # AllowAny
+        else:
+            permission_classes = [IsAdminUser]
+        return [permission() for permission in permission_classes]
+
+# CBV ARTICLE SPIDER
+class ArticleSpiderViewset(viewsets.ModelViewSet):
+    serializer_class = ArticleSpiderSerializer
+    pagination_class = ArticleSpiderPagination
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['in_use']
+    lookup_field = 'id'
+
+    def get_queryset(self):
+        return ArticleSpider.objects.all()
+
+    def get_permissions(self):
+        # """
+        # Instantiates and returns the list of permissions that this view requires.
+        # """
+        if self.action == 'list':
+            permission_classes = [IsAuthenticated]
+        elif self.action == 'retrieve':
+            permission_classes = [IsAuthenticated]  # AllowAny
+        elif self.action == 'create':
+            permission_classes = [IsAdminUser]  # AllowAny
+        else:
+            permission_classes = [IsAdminUser]
+        return [permission() for permission in permission_classes]
+
+# CBV ARTICLE THREAD
+class ArticleThreadViewset(viewsets.ModelViewSet):
+    serializer_class = ArticleThreadSerializer
+    pagination_class = ArticleThreadPagination
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['in_use']
+    lookup_field = 'id'
+
+    def get_queryset(self):
+        return ArticleThread.objects.all()
+
+    def get_permissions(self):
+        # """
+        # Instantiates and returns the list of permissions that this view requires.
+        # """
+        if self.action == 'list':
+            permission_classes = [IsAuthenticated]
+        elif self.action == 'retrieve':
+            permission_classes = [IsAuthenticated]  # AllowAny
+        elif self.action == 'create':
+            permission_classes = [IsAdminUser]  # AllowAny
+        else:
+            permission_classes = [IsAdminUser]
+        return [permission() for permission in permission_classes]
+
+# CBV ARTICLE
+class ArticleViewset(viewsets.ModelViewSet):
+    serializer_class = ArticleSerializer
+    pagination_class = ArticlePagination
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filterset_fields = ['in_use']
+    search_fields = ['article_id', 'url']
+    lookup_field = 'id'
+
+    def get_queryset(self):
+        return Article.objects.all()
+
+    def get_permissions(self):
+        # """
+        # Instantiates and returns the list of permissions that this view requires.
+        # """
+        if self.action == 'list':
+            permission_classes = [IsAuthenticated]
+        elif self.action == 'retrieve':
+            permission_classes = [IsAuthenticated]  # AllowAny
+        elif self.action == 'create':
+            permission_classes = [IsAdminUser]  # AllowAny
+        else:
+            permission_classes = [IsAdminUser]
+        return [permission() for permission in permission_classes]
 
 
 @permission_classes([IsAdminUser])
@@ -59,234 +146,34 @@ def delete_necc_data(request):
     [article.delete() for article in articles]
     return Response({"Message": "DELETED"})
 
-
+# MAIN LOGIC FUNCTION FOR SAVING AND ADDING OBJECTS IN SCRAPER
 @permission_classes([IsAdminUser])
 @api_view(['POST', ])
-def scraper_logic_view(request):
-    data = {'crawler_items': '',
-            'data': 50,
-            'error_log': ['|| Total spider/worker: 6 \n',
-                          '21/03/21 - 14:04:31 - news_extractor - INFO - Spider links: 3\n',
-                          '21/03/21 - 14:04:31 - news_extractor - INFO - Spider links: 3\n',
-                          '21/03/21 - 14:04:31 - news_extractor - INFO - Spider links: 3\n',
-                          '21/03/21 - 14:04:31 - news_extractor - INFO - Spider links: 3\n',
-                          '21/03/21 - 14:04:31 - news_extractor - INFO - Spider links: 3\n',
-                          '21/03/21 - 14:04:31 - news_extractor - INFO - Spider links: 3\n',
-                          '21/03/21 - 14:04:31 - news_extractor - INFO - Finished scraping '
-                          'in 0:00:01\n',
-                          '21/03/21 - 14:05:21 - news_extractor - INFO - Total links: 50 '
-                          '|| Total spider/worker: 6 \n',
-                          '21/03/21 - 14:05:22 - news_extractor - INFO - Spider links: 3\n',
-                          '21/03/21 - 14:05:22 - news_extractor - INFO - Spider links: 3\n',
-                          '21/03/21 - 14:05:22 - news_extractor - INFO - Spider links: 3\n',
-                          '21/03/21 - 14:05:22 - news_extractor - INFO - Spider links: 3\n',
-                          '21/03/21 - 14:05:22 - news_extractor - INFO - Spider links: 3\n',
-                          '21/03/21 - 14:05:22 - news_extractor - INFO - Spider links: 3\n',
-                          '21/03/21 - 14:05:22 - news_extractor - INFO - Finished scraping '
-                          'in 0:00:01\n',
-                          '21/03/21 - 14:06:04 - news_extractor - INFO - Total links: 50 '
-                          '|| Total spider/worker: 6 \n',
-                          '21/03/21 - 14:06:05 - news_extractor - INFO - Spider links: 3\n',
-                          '21/03/21 - 14:06:05 - news_extractor - INFO - Spider links: 3\n',
-                          '21/03/21 - 14:06:05 - news_extractor - INFO - Spider links: 3\n',
-                          '21/03/21 - 14:06:05 - news_extractor - INFO - Spider links: 3\n',
-                          '21/03/21 - 14:06:05 - news_extractor - INFO - Spider links: 3\n',
-                          '21/03/21 - 14:06:05 - news_extractor - INFO - Spider links: 3\n', ],
-            'info_log': ['21/03/21 - 14:04:29 - news_extractor - INFO - Total links: 100 '
-                         '|| Total spider/worker: 6 \n',
-                         '21/03/21 - 14:04:31 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:04:31 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:04:31 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:04:31 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:04:31 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:04:31 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:04:31 - news_extractor - INFO - Finished scraping '
-                         'in 0:00:01\n',
-                         '21/03/21 - 14:05:21 - news_extractor - INFO - Total links: 50 '
-                         '|| Total spider/worker: 6 \n',
-                         '21/03/21 - 14:05:22 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:05:22 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:05:22 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:05:22 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:05:22 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:05:22 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:05:22 - news_extractor - INFO - Finished scraping '
-                         'in 0:00:01\n',
-                         '21/03/21 - 14:06:04 - news_extractor - INFO - Total links: 50 '
-                         '|| Total spider/worker: 6 \n',
-                         '21/03/21 - 14:06:05 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:06:05 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:06:05 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:06:05 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:06:05 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:06:05 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:06:05 - news_extractor - INFO - Finished scraping '
-                         'in 0:00:01\n',
-                         '21/03/21 - 14:07:03 - news_extractor - INFO - Total links: 50 '
-                         '|| Total spider/worker: 6 \n',
-                         '21/03/21 - 14:07:04 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:07:04 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:07:05 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:07:05 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:07:05 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:07:05 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:07:05 - news_extractor - INFO - Finished scraping '
-                         'in 0:00:01\n',
-                         '21/03/21 - 14:09:46 - news_extractor - INFO - Total links: 50 '
-                         '|| Total spider/worker: 6 \n',
-                         '21/03/21 - 14:09:47 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:09:47 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:09:47 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:09:47 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:09:47 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:09:47 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:09:47 - news_extractor - INFO - Finished scraping '
-                         'in 0:00:01\n',
-                         '21/03/21 - 14:10:24 - news_extractor - INFO - Total links: 50 '
-                         '|| Total spider/worker: 6 \n',
-                         '21/03/21 - 14:10:25 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:10:25 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:10:25 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:10:25 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:10:26 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:10:26 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:10:26 - news_extractor - INFO - Finished scraping '
-                         'in 0:00:01\n',
-                         '21/03/21 - 14:13:22 - news_extractor - INFO - Total links: 50 '
-                         '|| Total spider/worker: 6 \n',
-                         '21/03/21 - 14:13:23 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:13:23 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:13:24 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:13:24 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:13:24 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:13:24 - news_extractor - INFO - Spider links: 3\n',
-                         '21/03/21 - 14:13:24 - news_extractor - INFO - Finished scraping '
-                         'in 0:00:01\n'],
-            'is_finished': True,
-            'json_log': '',
-            'spiders': [[{'thread_crawlers': [{'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'}]},
-                         {'thread_crawlers': [{'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'}]},
-                         {'thread_crawlers': [{'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'}]}],
-                        [{'thread_crawlers': [{'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'}]},
-                         {'thread_crawlers': [{'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'}]},
-                         {'thread_crawlers': [{'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'}]}],
+def scraper_logic_process(request):
+    # TESTING AREA DATA
+    t1 = time.perf_counter()
+    f = open('test_data.json')
+    data = json.load(f) 
+    # TESTONG AREA END
 
-                        [{'thread_crawlers': [{'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'}]},
-                         {'thread_crawlers': [{'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'}]},
-                         {'thread_crawlers': [{'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'}]}],
-                        [{'thread_crawlers': [{'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'}]},
-                         {'thread_crawlers': [{'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'}]},
-                         {'thread_crawlers': [{'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'}]}],
-                        [{'thread_crawlers': [{'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'}]},
-                         {'thread_crawlers': [{'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'}]},
-
-                         {'thread_crawlers': [{'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'}]}],
-                        [{'thread_crawlers': [{'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'}]},
-                         {'thread_crawlers': [{'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'},
-                                              {'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123'}]},
-                         {'thread_crawlers': [{'article_id': '1231231',
-                                               'url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html'}]}]],
-            'time_finished': '0:00:01',
-            'workers': 6}
-    crawler_set = get_crawler_crawler_set(request)  # REMOVE!!
-    # scraper = get_scraper_obj(request) # REMOVEW THIS!!!!!]
+    # GET: get crawler set is_finished = False
+    crawler_set = get_crawler_crawler_set(request)
+    # GET: get scraper obj is_finished = False
     scraper = scraper_obj_not_finish(request)
 
-    ### SAVE data to existing scraper object ###
-    # scraper.data = data.get('data')
-    # scraper.workers = data.get('workers')
-
+    # INITIALIZE split data of fime finished => hour, minute, second
     hour, minute, second = data.get('time_finished').split(':')
-    error_log = data.get('error_log')
-    infO_log = data.get('info_log')
-    total_data = data.get('data')
-    spiders = data.get('spiders')  # spider table
-    workers = data.get('workers')
-    try:
+    # INITIALIZE CHUNKED SPIDERS
+    spiders = data.get('spiders') # TEST DATA
+    spiders = request.data.get('spiders')
 
+    try:
+        # LOOP: ADD & SAVE all ARTICLES to its respective THREAD, then add THREADS to its respective SPIDER
+        # => when finish or succesfull update in_use and is_finished = True
         for spider in spiders:
+            # GET or CREATE: get the current not in use spider obj
             spider_obj = get_article_spider_not_in_use(request)
-            print("-----------------")
+            print("----------------- : SPIDER INSTANCE START HERE")
             # ADD & SAVE: save all article items and add to thread object || LOOP: for loop of all threads for each spider.
             for thread_obj in spider:
                 thread = get_article_thread_not_in_use(request)
@@ -294,6 +181,7 @@ def scraper_logic_view(request):
                 for obj in thread_obj:
                     print("")
                     print(thread_obj[obj])
+                    # SAVE ARTICLE and add to its respective THREAD
                     add_article(request, thread_obj[obj])
                     print("")
 
@@ -302,51 +190,33 @@ def scraper_logic_view(request):
 
                     # LOOP: Add all recent saved articles to current thread.
                     for article in articles:
-                        print("artilce added to thread")
+                        print("article added to its respective THREAD")
                         thread.articles.add(article)
                         article.in_use = True
                         article.save()
 
                     # ADD: add current thread to existing not in_use spider object
-                    print("thread added to spider")
                     spider_obj.thread_crawlers.add(thread)
                     thread.in_use = True
                     thread.save()
+                    print("THREAD added to its respective SPIDER")
                     # END OF THREAD
 
-                # ADD: add current spider to main parent : SCRAPER OBJ
-                print("Spider added to scraper")
+                # ADD: add current spider to main parent => SCRAPER OBJ with field of is_finished=False
+                print("SPIDER added to its respective SCRAPER")
                 scraper.spiders.add(spider_obj)
-            # UPDATE: patch existing spider in_use to True
+            # UPDATE: patch existing spider in_use to True => meaning its already added to main parent => SCRAPER
             spider_obj.in_use = True
             spider_obj.save()
 
+        # End of LOOP for SPIDER 
+        print("END of loop for spiders")
     except Exception as e:
         print("error on spiders")
-        priint(e)
-    print("END of loop for spiders")
+        print(e)
 
-    # END OF LOOP | SAVE: when looping of each spider is done patch SCRAPER OBJECT is_finished into True. Also, add all other required data.
-
+    # END OF LOOP | SAVE: instansiate all other required data.
     try:
-        # spider_data = get_article_spider_not_in_use(request)
-        # spiders_dicts = ArticleSpiderSerializer(spider_data, many=True)
-        # print(spiders_dicts)
-        # scraper_data = {
-        #     "data": data.get("data"),
-        #     "workers": data.get('workers'),
-        #     "info_log": data.get('info_log'),
-        #     "error_log": data.get('error_log'),
-        #     "spiders": spiders_dicts,
-        #     "time_finished": datetime.time(int(hour), int(minute), int(second))
-        #     "is_finished": True
-        # }
-
-        # scraper_serializer = ScraperSerializer(data=data)
-        # if scraper_serializer.is_valid():
-        #     scraper_serializer.save()
-        #     print(scraper_serializer.data)
-
         scraper.data = data.get('data')
         scraper.workers = data.get('workers')
         scraper.crawler_set = crawler_set
@@ -361,14 +231,21 @@ def scraper_logic_view(request):
         crawler_set.is_finished = True
         crawler_set.save()
         print("ALL DONE!")
+        print(round(time.perf_counter() - t1, 2))
     except Exception as e:
         print(e)
 
     # END OF LOGIC :)
-    print(scraper)
-    return Response({"DATA": scraper})
+    return Response({"DATA": "CREATED NEW SCRAPER OBJ!!!"})
 
-
+'''
+    ALL function helpers for SCRAPER OBJECT
+    SCRAPER             => get or create SCRAPER object
+    ARTICLE SPIDER      => get or create ARTICLE SPIDER object
+    ARTICLE THREAD      => get or create ARTICLE THREAD object
+    ARTICLE             => save article
+'''
+# FUNCTION for returning SCRAPER not finish. If exists retrieve, else generate new SCRAPER object is_finished = False.
 def scraper_obj_not_finish(request):
     try:
         crawler_set = get_crawler_crawler_set(request)
@@ -382,7 +259,7 @@ def scraper_obj_not_finish(request):
 
     return scraper
 
-
+# FUNCTION for returning article spider not in use. If exists retrive, else generate new ARTICLE SPIDER object in_use = False.
 def get_article_spider_not_in_use(request):
     spider_obj = ArticleSpider.objects.filter(user=request.user, in_use=False)
     if spider_obj.exists():
@@ -391,7 +268,7 @@ def get_article_spider_not_in_use(request):
         spider = ArticleSpider.objects.create(user=request.user, in_use=False)
     return spider
 
-
+# FUNCTION for returning for not in use article threads. If exists retrieve, else generate new THREAD object in_use = False.
 def get_article_thread_not_in_use(request):
     thread_obj = ArticleThread.objects.filter(user=request.user, in_use=False)
     if thread_obj.exists():
@@ -400,7 +277,7 @@ def get_article_thread_not_in_use(request):
         thread = ArticleThread.objects.create(user=request.user, in_use=False)
     return thread
 
-
+# FUNCTION for returning not in use artilces
 def get_articles_not_in_use(request):
     articles = Article.objects.filter(in_use=False)
     if articles.exists():
@@ -408,27 +285,21 @@ def get_articles_not_in_use(request):
     else:
         return Response({"Error": "No articles available"})
 
-
+# FUNCTION for saving articles
 def add_article(request, articles):
     for article in articles:
         serializer = ArticleSerializer(data=article)
         if serializer.is_valid():
             serializer.save()
-            print("item saved!!")
+            print("article saved!!")
     article_objs = Article.objects.filter(in_use=False)
     return
+'''
+    ALL function helpers for CRAWLER SET OBJECT
+    CRAWLER SET         => get or create CRAWLER SET object
 
-
-def get_scraper_obj(request):
-    scraper = Scraper.objects.filter(user=request.user, is_finished=False)
-    if scraper.exists():
-        scraper_obj = scraper[0]
-    else:
-        scraper_obj = Scraper.objects.create(
-            user=request.user, is_finished=False)
-    return scraper_obj
-
-
+'''
+# FUNCTION for returning crawler set not finish. If exists retrieve, else generate new CRAWLER SET is_finished = False.
 def get_crawler_crawler_set(request):
     crawler_set = CrawlerSet.objects.filter(
         user=request.user, is_finished=False)
@@ -438,6 +309,33 @@ def get_crawler_crawler_set(request):
         crawler_obj = CrawlerSet.objects.create(
             user=request.user, is_finished=False)
     return crawler_obj
+
+# FUNCTION for saving and adding crawler item.
+def save_crawler_item_to_crawler_set(self, request, crawler_obj, is_exist):
+    # GET: get all crawler items with in_use = False
+    crawler_items = CrawlerItem.objects.filter(in_use=False)
+    if is_exist:
+        for item in crawler_items:
+            print(item)
+            try:
+                crawler_obj.crawlers.add(item)
+                item.in_use = True
+                item.save()
+                print("{} was successfully added as item crawler".format(item))
+            except Exception as e:
+                print("Error")
+                print(e)
+    else:
+        for item in crawler_items:
+            try:
+                crawler_obj.crawlers.add(item)
+                item.in_use = True
+                item.save()
+                print("{} was successfully added as item crawler".format(item))
+            except Exception as e:
+                print("Error")
+                print(e)
+    return crawler_items
 
 
 class CrawlerSetViewset(viewsets.ModelViewSet):
@@ -464,7 +362,6 @@ class CrawlerSetViewset(viewsets.ModelViewSet):
         else:
             permission_classes = [IsAdminUser]
         return [permission() for permission in permission_classes]
-
 
 class CrawlerItemiewset(viewsets.ModelViewSet):
     serializer_class = CrawlerItemSerializer
@@ -621,29 +518,3 @@ class CrawlerItemiewset(viewsets.ModelViewSet):
             permission_classes = [IsAdminUser]
         return [permission() for permission in permission_classes]
 
-
-def save_crawler_item_to_crawler_set(self, request, crawler_obj, is_exist):
-    # GET: get all crawler items with in_use = False
-    crawler_items = CrawlerItem.objects.filter(in_use=False)
-    if is_exist:
-        for item in crawler_items:
-            print(item)
-            try:
-                crawler_obj.crawlers.add(item)
-                item.in_use = True
-                item.save()
-                print("{} was successfully added as item crawler".format(item))
-            except Exception as e:
-                print("Error")
-                print(e)
-    else:
-        for item in crawler_items:
-            try:
-                crawler_obj.crawlers.add(item)
-                item.in_use = True
-                item.save()
-                print("{} was successfully added as item crawler".format(item))
-            except Exception as e:
-                print("Error")
-                print(e)
-    return crawler_items

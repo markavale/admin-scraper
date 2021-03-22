@@ -1,0 +1,2137 @@
+{
+    "data": 500,
+    "workers": 6,
+    "spiders": [
+      [
+        {
+          "thread_crawlers": [
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            }
+          ]
+        },
+        {
+          "thread_crawlers": [
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            }
+          ]
+        },
+        {
+          "thread_crawlers": [
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "thread_crawlers": [
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            }
+          ]
+        },
+        {
+          "thread_crawlers": [
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            }
+          ]
+        },
+        {
+          "thread_crawlers": [
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "thread_crawlers": [
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            }
+          ]
+        },
+        {
+          "thread_crawlers": [
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            }
+          ]
+        },
+        {
+          "thread_crawlers": [
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "thread_crawlers": [
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            }
+          ]
+        },
+        {
+          "thread_crawlers": [
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            }
+          ]
+        },
+        {
+          "thread_crawlers": [
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "thread_crawlers": [
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            }
+          ]
+        },
+        {
+          "thread_crawlers": [
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            }
+          ]
+        },
+        {
+          "thread_crawlers": [
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "thread_crawlers": [
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            }
+          ]
+        },
+        {
+          "thread_crawlers": [
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            }
+          ]
+        },
+        {
+          "thread_crawlers": [
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123",
+              "article_id": "1231231"
+            },
+            {
+              "url": "http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html",
+              "article_id": "1231231"
+            }
+          ]
+        }
+      ]
+    ],
+    "info_log": [
+      "22/03/21 - 09:10:49 - news_extractor - INFO - Total links: 500 || Total spider/worker: 6 \n",
+      "22/03/21 - 09:10:50 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:10:50 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:10:50 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:10:50 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:10:50 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:10:50 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:10:50 - news_extractor - INFO - Finished scraping in 0:00:01\n",
+      "22/03/21 - 09:11:04 - news_extractor - INFO - Total links: 200 || Total spider/worker: 6 \n",
+      "22/03/21 - 09:11:05 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:11:05 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:11:05 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:11:05 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:11:05 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:11:05 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:11:05 - news_extractor - INFO - Finished scraping in 0:00:01\n",
+      "22/03/21 - 09:12:48 - news_extractor - INFO - Total links: 500 || Total spider/worker: 6 \n",
+      "22/03/21 - 09:12:48 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:12:48 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:12:49 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:12:49 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:12:49 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:12:49 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:12:49 - news_extractor - INFO - Finished scraping in 0:00:01\n",
+      "22/03/21 - 09:13:01 - news_extractor - INFO - Total links: 500 || Total spider/worker: 6 \n",
+      "22/03/21 - 09:13:01 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:13:02 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:13:02 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:13:02 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:13:02 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:13:02 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:13:02 - news_extractor - INFO - Finished scraping in 0:00:01\n",
+      "22/03/21 - 09:13:10 - news_extractor - INFO - Total links: 500 || Total spider/worker: 6 \n",
+      "22/03/21 - 09:13:11 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:13:11 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:13:11 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:13:11 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:13:11 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:13:11 - news_extractor - INFO - Spider links: 3\n",
+      "22/03/21 - 09:13:11 - news_extractor - INFO - Finished scraping in 0:00:01\n"
+    ],
+    "error_log": [],
+    "json_log": "",
+    "crawler_items": "",
+    "time_finished": "0:00:01"
+  }
+  
