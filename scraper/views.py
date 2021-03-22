@@ -157,7 +157,9 @@ def scraper_logic_process(request):
     # TESTONG AREA END
 
     data = request.data
-
+    print("-------------------------------------------------")
+    print(data)
+    print("-------------------------------------------------")
     # GET: get crawler set is_finished = False
     crawler_set = get_crawler_crawler_set(request)
     # GET: get scraper obj is_finished = False
