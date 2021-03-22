@@ -162,7 +162,9 @@ def scraper_logic_process(request):
     scraper = scraper_obj_not_finish(request)
 
     # INITIALIZE split data of fime finished => hour, minute, second
-    hour, minute, second = data.get('time_finished').split(':')
+    # hour, minute, second = data.get('time_finished').split(':')
+    hour, minute, second = request.data.get('time_finished').split(':')
+    
     # INITIALIZE CHUNKED SPIDERS
     # spiders = data.get('spiders') # TEST DATA
     spiders = request.data.get('spiders')
@@ -212,7 +214,7 @@ def scraper_logic_process(request):
         # End of LOOP for SPIDER 
         print("END of loop for spiders")
     except Exception as e:
-        print("error on spiders")
+        print("errors on spider")
         print(e)
 
     # END OF LOOP | SAVE: instansiate all other required data.

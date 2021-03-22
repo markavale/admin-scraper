@@ -2,7 +2,6 @@ from rest_framework.test import APITestCase, APIClient
 from django.urls import reverse
 from faker import Faker
 from model_mommy import mommy
-
 from django.conf import settings
 
 User = settings.AUTH_USER_MODEL

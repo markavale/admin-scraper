@@ -26,13 +26,13 @@ DJANGO_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles'
 ]
 LOCAL_APPS = [
     'users.apps.UsersConfig',
     'analytics.apps.AnalyticsConfig',
     'marketing.apps.MarketingConfig',
-    'scraper.apps.ScraperConfig',
+    'scraper.apps.ScraperConfig'
 ]
 THIRD_PARTY_APPS = [
     'dj_rest_auth',
