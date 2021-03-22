@@ -46,7 +46,7 @@ THIRD_PARTY_APPS = [
     'taggit',
     'taggit_serializer',
     'corsheaders',
-    'django_filters'
+    # 'django_filters'
 
 ]
 
@@ -66,7 +66,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ],
-    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    # 'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 20
 }
