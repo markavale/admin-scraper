@@ -152,9 +152,11 @@ def delete_necc_data(request):
 def scraper_logic_process(request):
     # TESTING AREA DATA
     t1 = time.perf_counter()
-    f = open('test_data.json')
-    data = json.load(f) 
+    # f = open('test_data.json')
+    # data = json.load(f) 
     # TESTONG AREA END
+
+    data = request.data
 
     # GET: get crawler set is_finished = False
     crawler_set = get_crawler_crawler_set(request)
