@@ -17,22 +17,21 @@ from .pagination import CrawlerItemPagination, ScraperPagination, ArticleSpiderP
 from django_filters.rest_framework import DjangoFilterBackend
 import datetime, time, json
 
-# @permission_classes([IsAdminUser, IsAuthenticated, ])
-# @api_view(['POST', ])
-# def main_scraper(request):
-#     data = {}
-#     parsed_url, created = SpiderCrawler.objects.get_or_create()
-#     return Response()
 
-
-
-# CBV FOR ARTILCE SPIDER, ARTICLE THREAD, ARTICLE
-
+'''
+    CBVs FOR SCRAPER, ARTICLE SPIDER, ARTICLE THREAD, ARTICLE
+    MAIN OBJECT => SCRAPER
+        * CHILDERN OBJECTS *
+            ARTICLE SPIDER => MANY TO MANY
+                ARTICLE THREAD => MANY TO MANY
+                    ARTICLE
+'''
 # CBV SCRAPER
 class ScraperViewset(viewsets.ModelViewSet):
     pagination_class = ScraperPagination
-    filter_backends = [DjangoFilterBackend,
-                       filters.SearchFilter, filters.OrderingFilter]
+    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
+    # filter_backends = [DjangoFilterBackend,
+    #                    filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = ['is_finished']
     search_fields = ['user', 'workers']
     ordering = ['user', 'time_finished']
@@ -60,8 +59,8 @@ class ScraperViewset(viewsets.ModelViewSet):
 class ArticleSpiderViewset(viewsets.ModelViewSet):
     serializer_class = ArticleSpiderSerializer
     pagination_class = ArticleSpiderPagination
-    filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['in_use']
+    # filter_backends = [DjangoFilterBackend]
+    # filterset_fields = ['in_use']
     lookup_field = 'id'
 
     def get_queryset(self):
@@ -85,8 +84,8 @@ class ArticleSpiderViewset(viewsets.ModelViewSet):
 class ArticleThreadViewset(viewsets.ModelViewSet):
     serializer_class = ArticleThreadSerializer
     pagination_class = ArticleThreadPagination
-    filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['in_use']
+    # filter_backends = [DjangoFilterBackend]
+    # filterset_fields = ['in_use']
     lookup_field = 'id'
 
     def get_queryset(self):
@@ -110,8 +109,9 @@ class ArticleThreadViewset(viewsets.ModelViewSet):
 class ArticleViewset(viewsets.ModelViewSet):
     serializer_class = ArticleSerializer
     pagination_class = ArticlePagination
-    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
-    filterset_fields = ['in_use']
+    filter_backends = [filters.SearchFilter]
+    # filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    # filterset_fields = ['in_use']
     search_fields = ['article_id', 'url']
     lookup_field = 'id'
 
@@ -368,8 +368,9 @@ class CrawlerSetViewset(viewsets.ModelViewSet):
 class CrawlerItemiewset(viewsets.ModelViewSet):
     serializer_class = CrawlerItemSerializer
     pagination_class = CrawlerItemPagination
-    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
-    filterset_fields = ['article_status', 'in_use', 'collection_name']
+    # filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filter_backends = [filters.SearchFilter]
+    # filterset_fields = ['article_status', 'in_use', 'collection_name']
     search_fields = ['article_id', 'article_error_status', 'article_url']
     lookup_field = 'id'
 #
