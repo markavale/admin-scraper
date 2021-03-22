@@ -164,7 +164,7 @@ def scraper_logic_process(request):
     # INITIALIZE split data of fime finished => hour, minute, second
     hour, minute, second = data.get('time_finished').split(':')
     # INITIALIZE CHUNKED SPIDERS
-    spiders = data.get('spiders') # TEST DATA
+    # spiders = data.get('spiders') # TEST DATA
     spiders = request.data.get('spiders')
 
     try:
