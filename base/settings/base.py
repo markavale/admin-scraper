@@ -35,7 +35,6 @@ LOCAL_APPS = [
     'scraper.apps.ScraperConfig',
 ]
 THIRD_PARTY_APPS = [
-    'django_filters',
     'dj_rest_auth',
     'rest_framework',
     'rest_framework.authtoken',
@@ -47,6 +46,8 @@ THIRD_PARTY_APPS = [
     'taggit',
     'taggit_serializer',
     'corsheaders',
+    'django_filters',
+
 ]
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS

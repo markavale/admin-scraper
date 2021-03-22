@@ -370,7 +370,7 @@ class CrawlerItemiewset(viewsets.ModelViewSet):
     filterset_fields = ['article_status', 'in_use', 'collection_name']
     search_fields = ['article_id', 'article_error_status', 'article_url']
     lookup_field = 'id'
-
+#
     def get_queryset(self):
         return CrawlerItem.objects.all()
 
