@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from . views import ScraperViewset, CrawlerSetViewset, CrawlerItemiewset, add_item_crawler
+from . views import CrawlerSetViewset, CrawlerItemiewset, ScraperViewset, scraper_logic_view, delete_necc_data
 
 router = DefaultRouter()
 router.register('scrapers', ScraperViewset)
@@ -9,5 +9,6 @@ router.register('crawler-items', CrawlerItemiewset, basename='CrawlerItemiewset'
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('add-crawler-items/', add_item_crawler, name='add-crawler-items'),
+    path('test-scraper/', scraper_logic_view, name='test-scraper'),
+    path('delete/', delete_necc_data, name='delete')
 ]

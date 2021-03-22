@@ -1,6 +1,5 @@
 from rest_framework import serializers
-from . models import Scraper, ArticleSpider, SpiderCrawler, Crawler, CrawlerSet, CrawlerItem
-
+from . models import Scraper, ArticleSpider, ArticleThread, Article, CrawlerSet, CrawlerItem
 
 class CrawlerItemSerializer(serializers.ModelSerializer):
 
@@ -16,23 +15,23 @@ class CrawlerSetSerializer(serializers.ModelSerializer):
         fields = '__all__'
 ### 
 
-class CrawlerSerializer(serializers.ModelSerializer):
+class ArticleSerializer(serializers.ModelSerializer):
     # spiders = SpiderSerializer()
 
     class Meta:
-        model = Crawler
+        model = Article
         fields = '__all__'
 
 
-class SpiderCrawlerSerializer(serializers.ModelSerializer):
-    crawlers = CrawlerSerializer(many=True, read_only=True)
-    crawler_set = CrawlerSetSerializer(many=True, read_only=True)
+class ArticleThreadSerializer(serializers.ModelSerializer):
+    articles = ArticleSerializer(many=True, read_only=True)
+
     class Meta:
-        model = SpiderCrawler
+        model = ArticleThread
         fields = '__all__'
 
 class ArticleSpiderSerializer(serializers.ModelSerializer):
-    thread_crawlers = SpiderCrawlerSerializer(many=True, read_only=True)
+    thread_crawlers = ArticleThreadSerializer(many=True, read_only=True)
     
     class Meta:
         model = ArticleSpider
