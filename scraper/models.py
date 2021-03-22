@@ -9,10 +9,6 @@ status_type = [
     ('Processing', 'Processing'),
     ('Queued', 'Queued'),
 ]
-collection_name_choice = [
-    ('global_link', 'global_link'),
-    ('article_link', 'article_link'),
-]
 
 class Scraper(models.Model):
     user            = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -77,7 +73,6 @@ class CrawlerItem(models.Model):
     article_id              = models.CharField(max_length=255)
     article_url             = models.URLField()
     download_latency        = models.FloatField(blank=True, null=True)
-    collection_name         = models.CharField(max_length=255, choices=collection_name_choice)
     article_status          = models.CharField(max_length=100, choices=status_type)
     article_error_status    = models.CharField(max_length=100, blank=True, null=True)
     http_error              = models.IntegerField(default=0)
