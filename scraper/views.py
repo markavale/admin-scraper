@@ -493,7 +493,7 @@ class CrawlerItemiewset(viewsets.ModelViewSet):
                       'skip_url': 0,
                       'timeout_error': 0}]
         resp_data = {}
-        for data in test_data:
+        for data in request.data:
             item_serializer = self.serializer_class(data=data)
             if item_serializer.is_valid():
                 item_serializer.save()
