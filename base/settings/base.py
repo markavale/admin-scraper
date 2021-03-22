@@ -46,7 +46,7 @@ THIRD_PARTY_APPS = [
     'taggit',
     'taggit_serializer',
     'corsheaders',
-    'django_filters',
+    'django_filters'
 
 ]
 
