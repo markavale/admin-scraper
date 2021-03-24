@@ -15,7 +15,9 @@ from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.viewsets import ModelViewSet
 from .pagination import CrawlerItemPagination, ScraperPagination, ArticleSpiderPagination, ArticleThreadPagination, ArticlePagination
 # from django_filters.rest_framework import DjangoFilterBackend
-import datetime, time, json
+import datetime
+import time
+import json
 
 
 '''
@@ -27,6 +29,8 @@ import datetime, time, json
                     ARTICLE
 '''
 # CBV SCRAPER
+
+
 class ScraperViewset(viewsets.ModelViewSet):
     pagination_class = ScraperPagination
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
@@ -39,7 +43,7 @@ class ScraperViewset(viewsets.ModelViewSet):
     permission_classes = [IsAdminUser]
 
     def get_queryset(self):
-        return Scraper.objects.all()
+        return Scraper.objects.all().order_by('-timestamp')
 
     def get_permissions(self):
         # """
@@ -56,6 +60,8 @@ class ScraperViewset(viewsets.ModelViewSet):
         return [permission() for permission in permission_classes]
 
 # CBV ARTICLE SPIDER
+
+
 class ArticleSpiderViewset(viewsets.ModelViewSet):
     serializer_class = ArticleSpiderSerializer
     pagination_class = ArticleSpiderPagination
@@ -81,6 +87,8 @@ class ArticleSpiderViewset(viewsets.ModelViewSet):
         return [permission() for permission in permission_classes]
 
 # CBV ARTICLE THREAD
+
+
 class ArticleThreadViewset(viewsets.ModelViewSet):
     serializer_class = ArticleThreadSerializer
     pagination_class = ArticleThreadPagination
@@ -106,6 +114,8 @@ class ArticleThreadViewset(viewsets.ModelViewSet):
         return [permission() for permission in permission_classes]
 
 # CBV ARTICLE
+
+
 class ArticleViewset(viewsets.ModelViewSet):
     serializer_class = ArticleSerializer
     pagination_class = ArticlePagination
@@ -147,19 +157,18 @@ def delete_necc_data(request):
     return Response({"Message": "DELETED"})
 
 # MAIN LOGIC FUNCTION FOR SAVING AND ADDING OBJECTS IN SCRAPER
+
+
 @permission_classes([IsAdminUser])
 @api_view(['POST', ])
 def scraper_logic_process(request):
     # TESTING AREA DATA
     t1 = time.perf_counter()
     # f = open('test_data.json')
-    # data = json.load(f) 
+    # data = json.load(f)
     # TESTONG AREA END
 
     data = request.data
-    print("-------------------------------------------------")
-    print(data)
-    print("-------------------------------------------------")
     # GET: get crawler set is_finished = False
     crawler_set = get_crawler_crawler_set(request)
     # GET: get scraper obj is_finished = False
@@ -168,7 +177,7 @@ def scraper_logic_process(request):
     # INITIALIZE split data of fime finished => hour, minute, second
     # hour, minute, second = data.get('time_finished').split(':')
     hour, minute, second = request.data.get('time_finished').split(':')
-    
+
     # INITIALIZE CHUNKED SPIDERS
     spiders = data.get('spiders')
 
@@ -214,7 +223,7 @@ def scraper_logic_process(request):
             spider_obj.in_use = True
             spider_obj.save()
 
-        # End of LOOP for SPIDER 
+        # End of LOOP for SPIDER
         print("END of loop for spiders")
     except Exception as e:
         print("errors on spider")
@@ -243,6 +252,7 @@ def scraper_logic_process(request):
     # END OF LOGIC :)
     return Response({"message": "Succesfully created Scraper Object"})
 
+
 '''
     ALL function helpers for SCRAPER OBJECT
     SCRAPER             => get or create SCRAPER object
@@ -251,20 +261,26 @@ def scraper_logic_process(request):
     ARTICLE             => save article
 '''
 # FUNCTION for returning SCRAPER not finish. If exists retrieve, else generate new SCRAPER object is_finished = False.
+
+
 def scraper_obj_not_finish(request):
     try:
         crawler_set = get_crawler_crawler_set(request)
-        scraper_obj = Scraper.objects.filter(user=request.user, is_finished=False)
+        scraper_obj = Scraper.objects.filter(
+            user=request.user, is_finished=False)
         if scraper_obj.exists():
             scraper = scraper_obj[0]
         else:
-            scraper = Scraper.objects.create(user=request.user, is_finished=False)
+            scraper = Scraper.objects.create(
+                user=request.user, is_finished=False)
     except Exception as e:
         print(e)
 
     return scraper
 
 # FUNCTION for returning article spider not in use. If exists retrive, else generate new ARTICLE SPIDER object in_use = False.
+
+
 def get_article_spider_not_in_use(request):
     spider_obj = ArticleSpider.objects.filter(user=request.user, in_use=False)
     if spider_obj.exists():
@@ -274,6 +290,8 @@ def get_article_spider_not_in_use(request):
     return spider
 
 # FUNCTION for returning for not in use article threads. If exists retrieve, else generate new THREAD object in_use = False.
+
+
 def get_article_thread_not_in_use(request):
     thread_obj = ArticleThread.objects.filter(user=request.user, in_use=False)
     if thread_obj.exists():
@@ -283,6 +301,8 @@ def get_article_thread_not_in_use(request):
     return thread
 
 # FUNCTION for returning not in use artilces
+
+
 def get_articles_not_in_use(request):
     articles = Article.objects.filter(in_use=False)
     if articles.exists():
@@ -291,6 +311,8 @@ def get_articles_not_in_use(request):
         return Response({"Error": "No articles available"})
 
 # FUNCTION for saving articles
+
+
 def add_article(request, articles):
     for article in articles:
         serializer = ArticleSerializer(data=article)
@@ -299,12 +321,16 @@ def add_article(request, articles):
             print("article saved!!")
     article_objs = Article.objects.filter(in_use=False)
     return
+
+
 '''
     ALL function helpers for CRAWLER SET OBJECT
     CRAWLER SET         => get or create CRAWLER SET object
 
 '''
 # FUNCTION for returning crawler set not finish. If exists retrieve, else generate new CRAWLER SET is_finished = False.
+
+
 def get_crawler_crawler_set(request):
     crawler_set = CrawlerSet.objects.filter(
         user=request.user, is_finished=False)
@@ -316,6 +342,8 @@ def get_crawler_crawler_set(request):
     return crawler_obj
 
 # FUNCTION for saving and adding crawler item.
+
+
 def save_crawler_item_to_crawler_set(self, request, crawler_obj, is_exist):
     # GET: get all crawler items with in_use = False
     crawler_items = CrawlerItem.objects.filter(in_use=False)
@@ -367,6 +395,7 @@ class CrawlerSetViewset(viewsets.ModelViewSet):
             permission_classes = [IsAdminUser]
         return [permission() for permission in permission_classes]
 
+
 class CrawlerItemiewset(viewsets.ModelViewSet):
     serializer_class = CrawlerItemSerializer
     pagination_class = CrawlerItemPagination
@@ -375,110 +404,122 @@ class CrawlerItemiewset(viewsets.ModelViewSet):
     search_fields = ['article_id', 'article_error_status', 'article_url']
     lookup_field = 'id'
 #
+
     def get_queryset(self):
         return CrawlerItem.objects.all()
 
     def create(self, request, *args, **kwargs):
-        test_data = [{'article_error_status': None,
-                      'article_id': '123123123123',
-                      'article_status': 'Done',
-                      'article_url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html',
-                      'base_error': 0,
-                      'dns_error': 0,
-                      'download_latency': 0.4431931972503662,
-                      'http_error': 0,
-                      'skip_url': 0,
-                      'timeout_error': 0},
-                     {'article_error_status': None,
-                      'article_id': '123123123123',
-                      'article_status': 'Done',
-                      'article_url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html',
-                      'base_error': 0,
-                      'dns_error': 0,
-                      'download_latency': 0.4431931972503662,
-                      'http_error': 0,
-                      'skip_url': 0,
-                      'timeout_error': 0},
-                     {'article_error_status': None,
-                      'article_id': '123123123123',
-                      'article_status': 'Done',
-                      'article_url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html',
-                      'base_error': 0,
-                      'dns_error': 0,
-                      'download_latency': 0.4297006130218506,
-                      'http_error': 0,
-                      'skip_url': 0,
-                      'timeout_error': 0},
-                     {'article_error_status': None,
-                      'article_id': '123123123123',
-                      'article_status': 'Done',
-                      'article_url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html',
-                      'base_error': 0,
-                      'dns_error': 0,
-                      'download_latency': 0.4297006130218506,
-                      'http_error': 0,
-                      'skip_url': 0,
-                      'timeout_error': 0},
-                     {'article_error_status': 'HTTP Error',
-                      'article_id': '123123123123',
-                      'article_status': 'Error',
-                      'article_url': 'https://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123',
-                      'base_error': 0,
-                      'dns_error': 0,
-                      'download_latency': None,
-                      'http_error': 1,
-                      'skip_url': 0,
-                      'timeout_error': 0},
-                     {'article_error_status': None,
-                      'article_id': '123123123123',
-                      'article_status': 'Done',
-                      'article_url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html',
-                      'base_error': 0,
-                      'dns_error': 0,
-                      'download_latency': 0.4137439727783203,
-                      'http_error': 0,
-                      'skip_url': 0,
-                      'timeout_error': 0},
-                     {'article_error_status': None,
-                      'article_id': '123123123123',
-                      'article_status': 'Done',
-                      'article_url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html',
-                      'base_error': 0,
-                      'dns_error': 0,
-                      'download_latency': 0.4137439727783203,
-                      'http_error': 0,
-                      'skip_url': 0,
-                      'timeout_error': 0},
-                     {'article_error_status': None,
-                      'article_id': '123123123123',
-                      'article_status': 'Done',
-                      'article_url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html',
-                      'base_error': 0,
-                      'dns_error': 0,
-                      'download_latency': 0.42194604873657227,
-                      'http_error': 0,
-                      'skip_url': 0,
-                      'timeout_error': 0},
-                     {'article_error_status': None,
-                      'article_id': '123123123123',
-                      'article_status': 'Done',
-                      'article_url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html',
-                      'base_error': 0,
-                      'dns_error': 0,
-                      'download_latency': 0.42194604873657227,
-                      'http_error': 0,
-                      'skip_url': 0,
-                      'timeout_error': 0},
-                     {'article_error_status': 'HTTP Error',
-                      'article_id': '123123123123',
-                      'article_status': 'Error',
-                      'article_url': 'https://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123',
-                      'base_error': 0,
-                      'dns_error': 0,
-                      'download_latency': None,
-                      'http_error': 1,
-                      'skip_url': 0,
-                      'timeout_error': 0}]
+        test_data = [
+            {'article_id': '123123123', 'article_url': 'https://www.google.com/search?channel=fs&client=ubuntu&q=heroku+logs+tail', 'download_latency': None,
+                'article_status': 'Error', 'article_error_status': '', 'http_error': 0, 'dns_error': 0, 'timeout_error': 0, 'base_error': 1, 'skip_url': 0, 'in_use': False},
+            {'article_id': '123123123', 'article_url': 'https://www.google.com/search?channel=fs&client=ubuntu&q=heroku+logs+tail', 'download_latency': None,
+                'article_status': 'Error', 'article_error_status': '', 'http_error': 0, 'dns_error': 0, 'timeout_error': 0, 'base_error': 1, 'skip_url': 0, 'in_use': False},
+            {'article_id': '123123123', 'article_url': 'https://www.google.com/search?channel=fs&client=ubuntu&q=heroku+logs+tail', 'download_latency': None,
+                'article_status': 'Error', 'article_error_status': '', 'http_error': 0, 'dns_error': 0, 'timeout_error': 0, 'base_error': 1, 'skip_url': 0, 'in_use': False},
+            {'article_id': '123123123', 'article_url': 'https://www.google.com/search?channel=fs&client=ubuntu&q=heroku+logs+tail', 'download_latency': None,
+                'article_status': 'Error', 'article_error_status': '', 'http_error': 0, 'dns_error': 0, 'timeout_error': 0, 'base_error': 1, 'skip_url': 0, 'in_use': False},
+
+            # {'article_error_status': None,
+            #  'article_id': '123123123123',
+            #  'article_status': 'Done',
+            #  'article_url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html',
+            #  'base_error': 0,
+            #  'dns_error': 0,
+            #  'download_latency': 0.4431931972503662,
+            #  'http_error': 0,
+            #  'skip_url': 0,
+            #  'timeout_error': 0},
+            # {'article_error_status': None,
+            #  'article_id': '123123123123',
+            #  'article_status': 'Done',
+            #  'article_url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html',
+            #  'base_error': 0,
+            #  'dns_error': 0,
+            #  'download_latency': 0.4431931972503662,
+            #  'http_error': 0,
+            #  'skip_url': 0,
+            #  'timeout_error': 0},
+            # {'article_error_status': None,
+            #  'article_id': '123123123123',
+            #  'article_status': 'Done',
+            #  'article_url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html',
+            #  'base_error': 0,
+            #  'dns_error': 0,
+            #  'download_latency': 0.4297006130218506,
+            #  'http_error': 0,
+            #  'skip_url': 0,
+            #  'timeout_error': 0},
+            # {'article_error_status': None,
+            #  'article_id': '123123123123',
+            #  'article_status': 'Done',
+            #  'article_url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html',
+            #  'base_error': 0,
+            #  'dns_error': 0,
+            #  'download_latency': 0.4297006130218506,
+            #  'http_error': 0,
+            #  'skip_url': 0,
+            #  'timeout_error': 0},
+            # {'article_error_status': 'HTTP Error',
+            #  'article_id': '123123123123',
+            #  'article_status': 'Error',
+            #  'article_url': 'https://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123',
+            #  'base_error': 0,
+            #  'dns_error': 0,
+            #  'download_latency': None,
+            #  'http_error': 1,
+            #  'skip_url': 0,
+            #  'timeout_error': 0},
+            # {'article_error_status': None,
+            #  'article_id': '123123123123',
+            #  'article_status': 'Done',
+            #  'article_url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html',
+            #  'base_error': 0,
+            #  'dns_error': 0,
+            #  'download_latency': 0.4137439727783203,
+            #  'http_error': 0,
+            #  'skip_url': 0,
+            #  'timeout_error': 0},
+            # {'article_error_status': None,
+            #  'article_id': '123123123123',
+            #  'article_status': 'Done',
+            #  'article_url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html',
+            #  'base_error': 0,
+            #  'dns_error': 0,
+            #  'download_latency': 0.4137439727783203,
+            #  'http_error': 0,
+            #  'skip_url': 0,
+            #  'timeout_error': 0},
+            # {'article_error_status': None,
+            #  'article_id': '123123123123',
+            #  'article_status': 'Done',
+            #  'article_url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html',
+            #  'base_error': 0,
+            #  'dns_error': 0,
+            #  'download_latency': 0.42194604873657227,
+            #  'http_error': 0,
+            #  'skip_url': 0,
+            #  'timeout_error': 0},
+            # {'article_error_status': None,
+            #  'article_id': '123123123123',
+            #  'article_status': 'Done',
+            #  'article_url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html',
+            #  'base_error': 0,
+            #  'dns_error': 0,
+            #  'download_latency': 0.42194604873657227,
+            #  'http_error': 0,
+            #  'skip_url': 0,
+            #  'timeout_error': 0},
+            # {'article_error_status': 'HTTP Error',
+            #  'article_id': '123123123123',
+            #  'article_status': 'Error',
+            #  'article_url': 'https://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123',
+            #  'base_error': 0,
+            #  'dns_error': 0,
+            #  'download_latency': None,
+            #  'http_error': 1,
+            #  'skip_url': 0,
+            #  'timeout_error': 0}
+             ]
         resp_data = {}
         for data in request.data:
             print("--------------------- crawler set | ITEM")
@@ -514,4 +555,3 @@ class CrawlerItemiewset(viewsets.ModelViewSet):
         else:
             permission_classes = [IsAdminUser]
         return [permission() for permission in permission_classes]
-
