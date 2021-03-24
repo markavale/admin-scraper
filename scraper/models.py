@@ -62,6 +62,7 @@ class CrawlerSet(models.Model):
     user                = models.ForeignKey(User, on_delete=models.CASCADE)
     crawlers            = models.ManyToManyField('CrawlerItem')
     is_finished         = models.BooleanField(default=False)
+    timestamp           = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
         return "CrawlerSet"
@@ -82,7 +83,6 @@ class CrawlerItem(models.Model):
     skip_url                = models.IntegerField(default=0)   
     timestamp               = models.DateTimeField(auto_now_add=True)
     in_use                  = models.BooleanField(default=False)
-    
 
     def __str__(self):
         return self.article_id

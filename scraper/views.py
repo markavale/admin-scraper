@@ -64,7 +64,7 @@ class ArticleSpiderViewset(viewsets.ModelViewSet):
     lookup_field = 'id'
 
     def get_queryset(self):
-        return ArticleSpider.objects.all()
+        return ArticleSpider.objects.all().order_by('-timestamp')
 
     def get_permissions(self):
         # """
@@ -170,8 +170,7 @@ def scraper_logic_process(request):
     hour, minute, second = request.data.get('time_finished').split(':')
     
     # INITIALIZE CHUNKED SPIDERS
-    # spiders = data.get('spiders') # TEST DATA
-    spiders = request.data.get('spiders')
+    spiders = data.get('spiders')
 
     try:
         # LOOP: ADD & SAVE all ARTICLES to its respective THREAD, then add THREADS to its respective SPIDER
@@ -242,7 +241,7 @@ def scraper_logic_process(request):
         print(e)
 
     # END OF LOGIC :)
-    return Response({"DATA": "CREATED NEW SCRAPER OBJ!!!"})
+    return Response({"message": "Succesfully created Scraper Object"})
 
 '''
     ALL function helpers for SCRAPER OBJECT
@@ -345,12 +344,11 @@ def save_crawler_item_to_crawler_set(self, request, crawler_obj, is_exist):
 
 
 class CrawlerSetViewset(viewsets.ModelViewSet):
-    # queryset = Order.objects.all()
     serializer_class = CrawlerSetSerializer
     lookup_field = 'id'
 
     def get_queryset(self):
-        return CrawlerSet.objects.filter(user=self.request.user)
+        return CrawlerSet.objects.filter(user=self.request.user).order_by('-timestamp')
 
     def list(self, request, *args, **kwargs):
         return super().list(request, *args, **kwargs)
@@ -374,7 +372,6 @@ class CrawlerItemiewset(viewsets.ModelViewSet):
     pagination_class = CrawlerItemPagination
     # filter_backends = [DjangoFilterBackend, filters.SearchFilter]
     filter_backends = [filters.SearchFilter]
-    # filterset_fields = ['article_status', 'in_use', 'collection_name']
     search_fields = ['article_id', 'article_error_status', 'article_url']
     lookup_field = 'id'
 #
@@ -387,7 +384,6 @@ class CrawlerItemiewset(viewsets.ModelViewSet):
                       'article_status': 'Done',
                       'article_url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html',
                       'base_error': 0,
-                      'collection_name': 'global_link',
                       'dns_error': 0,
                       'download_latency': 0.4431931972503662,
                       'http_error': 0,
@@ -398,7 +394,6 @@ class CrawlerItemiewset(viewsets.ModelViewSet):
                       'article_status': 'Done',
                       'article_url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html',
                       'base_error': 0,
-                      'collection_name': 'global_link',
                       'dns_error': 0,
                       'download_latency': 0.4431931972503662,
                       'http_error': 0,
@@ -409,7 +404,6 @@ class CrawlerItemiewset(viewsets.ModelViewSet):
                       'article_status': 'Done',
                       'article_url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html',
                       'base_error': 0,
-                      'collection_name': 'global_link',
                       'dns_error': 0,
                       'download_latency': 0.4297006130218506,
                       'http_error': 0,
@@ -420,7 +414,6 @@ class CrawlerItemiewset(viewsets.ModelViewSet):
                       'article_status': 'Done',
                       'article_url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html',
                       'base_error': 0,
-                      'collection_name': 'global_link',
                       'dns_error': 0,
                       'download_latency': 0.4297006130218506,
                       'http_error': 0,
@@ -431,7 +424,6 @@ class CrawlerItemiewset(viewsets.ModelViewSet):
                       'article_status': 'Error',
                       'article_url': 'https://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123',
                       'base_error': 0,
-                      'collection_name': 'global_link',
                       'dns_error': 0,
                       'download_latency': None,
                       'http_error': 1,
@@ -442,7 +434,6 @@ class CrawlerItemiewset(viewsets.ModelViewSet):
                       'article_status': 'Done',
                       'article_url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html',
                       'base_error': 0,
-                      'collection_name': 'global_link',
                       'dns_error': 0,
                       'download_latency': 0.4137439727783203,
                       'http_error': 0,
@@ -453,7 +444,6 @@ class CrawlerItemiewset(viewsets.ModelViewSet):
                       'article_status': 'Done',
                       'article_url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html',
                       'base_error': 0,
-                      'collection_name': 'global_link',
                       'dns_error': 0,
                       'download_latency': 0.4137439727783203,
                       'http_error': 0,
@@ -464,7 +454,6 @@ class CrawlerItemiewset(viewsets.ModelViewSet):
                       'article_status': 'Done',
                       'article_url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html',
                       'base_error': 0,
-                      'collection_name': 'global_link',
                       'dns_error': 0,
                       'download_latency': 0.42194604873657227,
                       'http_error': 0,
@@ -475,7 +464,6 @@ class CrawlerItemiewset(viewsets.ModelViewSet):
                       'article_status': 'Done',
                       'article_url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html',
                       'base_error': 0,
-                      'collection_name': 'global_link',
                       'dns_error': 0,
                       'download_latency': 0.42194604873657227,
                       'http_error': 0,
@@ -486,7 +474,6 @@ class CrawlerItemiewset(viewsets.ModelViewSet):
                       'article_status': 'Error',
                       'article_url': 'https://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123',
                       'base_error': 0,
-                      'collection_name': 'global_link',
                       'dns_error': 0,
                       'download_latency': None,
                       'http_error': 1,
@@ -494,6 +481,9 @@ class CrawlerItemiewset(viewsets.ModelViewSet):
                       'timeout_error': 0}]
         resp_data = {}
         for data in request.data:
+            print("--------------------- crawler set | ITEM")
+            print(request.data)
+        # for data in test_data:
             item_serializer = self.serializer_class(data=data)
             if item_serializer.is_valid():
                 item_serializer.save()
