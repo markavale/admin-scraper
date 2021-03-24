@@ -70,7 +70,7 @@ class ArticleSpiderViewset(viewsets.ModelViewSet):
     lookup_field = 'id'
 
     def get_queryset(self):
-        return ArticleSpider.objects.all().order_by('-timestamp')
+        return ArticleSpider.objects.all()
 
     def get_permissions(self):
         # """
