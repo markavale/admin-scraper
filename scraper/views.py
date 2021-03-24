@@ -175,8 +175,8 @@ def scraper_logic_process(request):
     scraper = scraper_obj_not_finish(request)
 
     # INITIALIZE split data of fime finished => hour, minute, second
-    # hour, minute, second = data.get('time_finished').split(':')
-    hour, minute, second = request.data.get('time_finished').split(':')
+    hour, minute, second = data.get('time_finished').split(':')
+    # hour, minute, second = request.data.get('time_finished').split(':')
 
     # INITIALIZE CHUNKED SPIDERS
     spiders = data.get('spiders')

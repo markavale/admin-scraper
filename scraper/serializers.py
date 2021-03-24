@@ -41,7 +41,7 @@ class ArticleSpiderSerializer(serializers.ModelSerializer):
 class ScraperSerializer(serializers.ModelSerializer):
     spiders = ArticleSpiderSerializer(many=True, read_only=False)
     total_spiders = serializers.IntegerField(source='get_total_spiders', read_only=True)
-
+    crawler_set = CrawlerSetSerializer(many=False, read_only=True)
 
     class Meta:
         model = Scraper

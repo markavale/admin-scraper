@@ -18,7 +18,7 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = ['url', 'article_id', 'in_use']
 
 class CrawlerAdmin(admin.ModelAdmin):
-    list_display = ['user', 'is_finished']
+    list_display = ['user', 'is_finished', 'timestamp']
 
 class CrawlerItemAdmin(admin.ModelAdmin):
     list_display = ('article_id', 'article_url', 'download_latency', 'article_status',
