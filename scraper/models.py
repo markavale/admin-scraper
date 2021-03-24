@@ -70,6 +70,53 @@ class CrawlerSet(models.Model):
     def get_total_items(self):
         return self.crawlers.count()
 
+    def get_avg_dl_latency(self):
+        total =  0.0
+        counter = 0
+        items = self.crawlers.all()
+        for item in items:
+            if item.download_latency is not None:
+                counter += 1
+                total += item.download_latency
+        try:
+            avg = total / counter
+        except ZeroDivisionError:
+            avg = 0
+        return round(avg, 2)
+
+    def get_total_http_error(self):
+        total = 0
+        for error in self.crawlers.all():
+            total += error.http_error
+        return total
+    def get_total_dns_error(self):
+        total = 0
+        for error in self.crawlers.all():
+            total += error.dns_error
+        return total
+    def get_total_timeout_error(self):
+        total = 0
+        for error in self.crawlers.all():
+            total += error.timeout_error
+        return total
+    def get_total_base_error(self):
+        total = 0
+        for error in self.crawlers.all():
+            total += error.base_error
+        return total
+    def get_total_skip_error(self):
+        total = 0
+        for error in self.crawlers.all():
+            total += error.skip_url
+        return total
+    def get_total_error(self):
+        return self.get_total_base_error() + self.get_total_dns_error() + self.get_total_http_error() + self.get_total_timeout_error() + self.get_total_skip_error()
+    def get_total_parsed_article(self):
+        return self.crawlers.count() - self.get_total_error()
+    def get_total_articles(self):
+        return self.crawlers.count()
+
+
 class CrawlerItem(models.Model):
     article_id              = models.CharField(max_length=255)
     article_url             = models.URLField()
