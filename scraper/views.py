@@ -524,6 +524,8 @@ class CrawlerItemiewset(viewsets.ModelViewSet):
         for data in request.data:
             print("--------------------- crawler set | ITEM")
             print(request.data)
+            print("-------------------FQDN")
+            print()
         # for data in test_data:
             item_serializer = self.serializer_class(data=data)
             if item_serializer.is_valid():
