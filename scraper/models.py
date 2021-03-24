@@ -73,7 +73,7 @@ class CrawlerSet(models.Model):
 class CrawlerItem(models.Model):
     article_id              = models.CharField(max_length=255)
     article_url             = models.URLField()
-    fqdn                    = models.CharField(max_length=255, blank=True, null=True)
+    # fqdn                    = models.CharField(max_length=255, blank=True, null=True)
     download_latency        = models.FloatField(blank=True, null=True)
     article_status          = models.CharField(max_length=100, choices=status_type)
     article_error_status    = models.CharField(max_length=100, blank=True, null=True)
