@@ -1,11 +1,10 @@
 from django.contrib import admin
 from . models import Scraper, ArticleSpider, ArticleThread, Article, CrawlerSet, CrawlerItem
 
-
 class ScraperAdmin(admin.ModelAdmin):
     list_display = [
-        'user', 'data', 'workers', 'crawler_set', 'info_log',
-        'error_log', 'time_finished', 'is_finished', 'timestamp'
+        'user', 'data', 'workers', 'crawler_set',
+        'time_finished', 'is_finished', 'timestamp'
     ]
 
 class ArticleSpiderAdmin(admin.ModelAdmin):

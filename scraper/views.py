@@ -376,7 +376,7 @@ class CrawlerSetViewset(viewsets.ModelViewSet):
     lookup_field = 'id'
 
     def get_queryset(self):
-        return CrawlerSet.objects.filter(user=self.request.user).order_by('-timestamp')
+        return CrawlerSet.objects.all().order_by('-timestamp')
 
     def list(self, request, *args, **kwargs):
         return super().list(request, *args, **kwargs)
@@ -403,10 +403,9 @@ class CrawlerItemiewset(viewsets.ModelViewSet):
     filter_backends = [filters.SearchFilter]
     search_fields = ['article_id', 'article_error_status', 'article_url']
     lookup_field = 'id'
-#
 
     def get_queryset(self):
-        return CrawlerItem.objects.all()
+        return CrawlerItem.objects.all().order_by('-timestamp')
 
     def create(self, request, *args, **kwargs):
         test_data = [
