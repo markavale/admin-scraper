@@ -21,7 +21,7 @@ class CrawlerAdmin(admin.ModelAdmin):
     list_display = ['user', 'is_finished', 'timestamp']
 
 class CrawlerItemAdmin(admin.ModelAdmin):
-    list_display = ('article_id', 'article_url', 'download_latency', 'article_status',
+    list_display = ('article_id', 'article_url', 'fqdn', 'download_latency', 'article_status',
                     'article_error_status', 'http_error', 'dns_error', 'timeout_error',
                     'base_error', 'skip_url', 'in_use', 'timestamp',)
     # ordering = ('-date_parsed')
