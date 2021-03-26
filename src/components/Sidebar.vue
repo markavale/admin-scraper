@@ -173,7 +173,7 @@ export default {
           href: { name: "dashboard" },
         },
         { title: "Reports", icon: "mdi-table", href: { name: "reports" } },
-        { title: "About", icon: "mdi-help-box" },
+        { title: "Test View", icon: "mdi-help-box", href: { name: "test" } },
       ],
       color: "primary",
       colors: ["primary", "blue", "success", "red", "teal"],
@@ -218,7 +218,6 @@ export default {
   },
   methods: {
     getCurrentUser() {
-      console.log("from store");
       console.log(this.$store.state.user.user);
       if (this.isAuthenticated) {
         axiosBase
@@ -229,12 +228,8 @@ export default {
             },
           })
           .then((res) => {
-            console.log(res.data);
-            console.log(res.data.username);
             // this.user = res.data;
             this.$store.commit("currentUser", res.data);
-            console.log("from store");
-            console.log(this.$store.state.user.user.username);
             this.user = this.$store.state.user.user;
           })
           .catch((err) => console.log(err));

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import Cookies from 'js-cookie'
 // import { state } from '@/store/modules/user'
-// const APIUrlProduction = 'https://markanthonyvale.herokuapp.com/'
+// const APIUrlProduction = 'https://admin-scraper.herokuapp.com/'
 const APIUrlDevelopment = 'http://localhost:8000/'
 const APIUrl = APIUrlDevelopment
 

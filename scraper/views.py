@@ -15,7 +15,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.viewsets import ModelViewSet
 from .pagination import CrawlerItemPagination, ScraperPagination, ArticleSpiderPagination, ArticleThreadPagination, ArticlePagination
 # from django_filters.rest_framework import DjangoFilterBackend
-import datetime, time, json, math
+import datetime, time, json, math, statistics
 
 
 '''
@@ -224,8 +224,10 @@ def scraper_logic_process(request):
         # End of LOOP for SPIDER
         print("END of loop for spiders")
     except Exception as e:
-        print("errors on spider")
+        print("errors in spider")
+        print("Process terminated by scrapy")
         print(e)
+        scraper.terminated_process = True
 
     # END OF LOOP | SAVE: instansiate all other required data.
     try:
@@ -393,8 +395,7 @@ class CrawlerSetViewset(viewsets.ModelViewSet):
             permission_classes = [IsAdminUser]
         return [permission() for permission in permission_classes]
 
-
-class CrawlerItemiewset(viewsets.ModelViewSet):
+class CrawlerItemviewset(viewsets.ModelViewSet):
     serializer_class = CrawlerItemSerializer
     pagination_class = CrawlerItemPagination
     # filter_backends = [DjangoFilterBackend, filters.SearchFilter]
@@ -406,113 +407,13 @@ class CrawlerItemiewset(viewsets.ModelViewSet):
         return CrawlerItem.objects.all().order_by('-timestamp')
 
     def create(self, request, *args, **kwargs):
-        test_data = [
-            {'article_error_status': None,
-             'article_id': '123123123123',
-             'article_status': 'Done',
-             'article_url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html',
-             'base_error': 0,
-             'dns_error': 0,
-             'download_latency': 0.4431931972503662,
-             'http_error': 0,
-             'skip_url': 0,
-             'timeout_error': 0},
-            {'article_error_status': None,
-             'article_id': '123123123123',
-             'article_status': 'Done',
-             'article_url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html',
-             'base_error': 0,
-             'dns_error': 0,
-             'download_latency': 0.4431931972503662,
-             'http_error': 0,
-             'skip_url': 0,
-             'timeout_error': 0},
-            {'article_error_status': None,
-             'article_id': '123123123123',
-             'article_status': 'Done',
-             'article_url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html',
-             'base_error': 0,
-             'dns_error': 0,
-             'download_latency': 0.4297006130218506,
-             'http_error': 0,
-             'skip_url': 0,
-             'timeout_error': 0},
-            {'article_error_status': None,
-             'article_id': '123123123123',
-             'article_status': 'Done',
-             'article_url': 'http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html',
-             'base_error': 0,
-             'dns_error': 0,
-             'download_latency': 0.4297006130218506,
-             'http_error': 0,
-             'skip_url': 0,
-             'timeout_error': 0},
-            {'article_error_status': 'HTTP Error',
-             'article_id': '123123123123',
-             'article_status': 'Error',
-             'article_url': 'https://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123',
-             'base_error': 0,
-             'dns_error': 0,
-             'download_latency': None,
-             'http_error': 1,
-             'skip_url': 0,
-             'timeout_error': 0},
-            {'article_error_status': None,
-             'article_id': '123123123123',
-             'article_status': 'Done',
-             'article_url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html',
-             'base_error': 0,
-             'dns_error': 0,
-             'download_latency': 0.4137439727783203,
-             'http_error': 0,
-             'skip_url': 0,
-             'timeout_error': 0},
-            {'article_error_status': None,
-             'article_id': '123123123123',
-             'article_status': 'Done',
-             'article_url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html',
-             'base_error': 0,
-             'dns_error': 0,
-             'download_latency': 0.4137439727783203,
-             'http_error': 0,
-             'skip_url': 0,
-             'timeout_error': 0},
-            {'article_error_status': None,
-             'article_id': '123123123123',
-             'article_status': 'Done',
-             'article_url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html',
-             'base_error': 0,
-             'dns_error': 0,
-             'download_latency': 0.42194604873657227,
-             'http_error': 0,
-             'skip_url': 0,
-             'timeout_error': 0},
-            {'article_error_status': None,
-             'article_id': '123123123123',
-             'article_status': 'Done',
-             'article_url': 'http://www.nytimes.com/2021/02/28/us/schools-reopening-philadelphia-parents.html',
-             'base_error': 0,
-             'dns_error': 0,
-             'download_latency': 0.42194604873657227,
-             'http_error': 0,
-             'skip_url': 0,
-             'timeout_error': 0},
-            {'article_error_status': 'HTTP Error',
-             'article_id': '123123123123',
-             'article_status': 'Error',
-             'article_url': 'https://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html3123',
-             'base_error': 0,
-             'dns_error': 0,
-             'download_latency': None,
-             'http_error': 1,
-             'skip_url': 0,
-             'timeout_error': 0}
-             ]
+        # f = open('test_article_items.json')
+        # test_data = json.load(f)
         resp_data = {}
-        for data in request.data:
+        # data = test_data
+        data = request.data
+        for data in data:
             print("--------------------- crawler set | ITEM")
-            print(request.data)
-        # for data in test_data:
             item_serializer = self.serializer_class(data=data)
             if item_serializer.is_valid():
                 item_serializer.save()
@@ -565,3 +466,68 @@ def optimize_log_file(request):
         )
     data['items'] = items
     return Response(data)
+
+'''
+    DASHBOARD RETURN JSON OBJECTS
+'''
+@permission_classes(['IsAdminUser'])
+@api_view(['GET', ])
+def scrapers_analysis(request):
+    data = {}
+    scrapers        = get_scrapers(request)
+    article_data    = get_crawler_sets(request)
+    articles        = get_articles(request)
+
+    # LOGIC for appending and computing to get the sum of all errors
+    error_list = []
+    [error_list.append(article.get_total_error()) for article in article_data]
+    error_list              = list(map(lambda article: article.get_total_error(), article_data))
+    # Same as above => another logic is by using map
+
+    # LOGIC for appending and computing to get the average of all download latency
+    download_latency_list   = list(map(lambda article: article.get_avg_dl_latency(), article_data))
+
+    # Total data spawned by scrapy
+    data_list               = list(map(lambda scraper: scraper.data, scrapers))
+
+    # Instantiate a list of total parsed articles
+    parsed_article_list     = list(map(lambda article: article.get_total_parsed_article(), article_data))
+
+    # LOGIC for computing an absolute total number of  missed artilces or skip articles
+    missed_article_list     = list(map(lambda scraper:abs(scraper.data - scraper.crawler_set.get_total_articles()) , scrapers))
+    
+    data['total_data']                      = sum(data_list)
+    data['total_articles']                  = len(articles)
+    data['average_download_latency']        = round(statistics.mean(download_latency_list), 2)
+
+    data['successful_parsed_articles']      = sum(parsed_article_list)
+    data['unsuccessful_parse_articles']     = sum(error_list)
+    data['missed_articles']                 = sum(missed_article_list)
+    
+    data['total_scraping_rounds']           = len(scrapers)
+    
+    
+
+    return Response(data, status=status.HTTP_200_OK)
+
+
+def get_scrapers(request):
+    try:
+        scrapers    = Scraper.objects.filter(is_finished=True)
+        return scrapers
+    except:
+        return Response({"data": "No data available"})
+
+def get_crawler_sets(request):
+    try:
+        article_data    = CrawlerSet.objects.filter(is_finished=True)
+        return article_data
+    except:
+        return Response({"data": "No data available"})
+
+def get_articles(request):
+    try:
+        articles    = Article.objects.filter(in_use=True)
+        return articles
+    except:
+        return Response({"data": "No articles available"})

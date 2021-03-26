@@ -169,7 +169,7 @@
 </template>
 
 <script>
-// import { mapGetters } from "vuex";
+import { mapGetters } from "vuex";
 const gradients = [
     ['#222'],
     ['#42b3f4'],
@@ -197,21 +197,19 @@ export default {
     lineCap: 'round',
   }),
   computed: {
-    // ...mapGetters(["getPageViews", "getRatings"]),
+    ...mapGetters(["getScrapers", "getCrawlerSets"]),
   },
   mounted() {
-    this.fetchPageViews();
-    this.getRating();
+    this.mountCrawlerSets();
+    this.mountScrapers();
     console.log("mounted");
   },
   methods: {
-    fetchPageViews() {
-      this.$store.dispatch("fetchPageViews");
-      //   .then(() =>console.log("Success"))
-      //   .catch(err => console.log(err))
+    mountCrawlerSets() {
+      this.$store.dispatch("fetchCrawlerSets");
     },
-    getRating() {
-      this.$store.dispatch("fetchRatings");
+    mountScrapers() {
+      this.$store.dispatch("fetchScrapers");
       //   .then()
       //   .catch()
     },

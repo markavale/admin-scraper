@@ -11,22 +11,29 @@ status_type = [
 ]
 
 class Scraper(models.Model):
-    user            = models.ForeignKey(User, on_delete=models.CASCADE)
-    data            = models.IntegerField(default=0)
-    workers         = models.IntegerField(default=0)
-    spiders         = models.ManyToManyField('ArticleSpider')
-    crawler_set     = models.ForeignKey('CrawlerSet', on_delete=models.CASCADE, blank=True, null=True)
-    info_log        = models.TextField(blank=True, null=True)
-    error_log       = models.TextField(blank=True, null=True)
-    time_finished   = models.TimeField(auto_now=False, auto_now_add=False, blank=True, null=True)
-    is_finished     = models.BooleanField(default=False)
-    timestamp       = models.DateTimeField(auto_now_add=True)
+    user                = models.ForeignKey(User, on_delete=models.CASCADE)
+    data                = models.IntegerField(default=0)
+    workers             = models.IntegerField(default=0)
+    spiders             = models.ManyToManyField('ArticleSpider')
+    crawler_set         = models.ForeignKey('CrawlerSet', on_delete=models.CASCADE, blank=True, null=True)
+    info_log            = models.TextField(blank=True, null=True)
+    error_log           = models.TextField(blank=True, null=True)
+    time_finished       = models.TimeField(auto_now=False, auto_now_add=False, blank=True, null=True)
+    is_finished         = models.BooleanField(default=False)
+    terminated_process  = models.BooleanField(default=False)
+    timestamp           = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.user.username
 
     def get_total_spiders(self):
         return self.spiders.count()
+
+    def get_total_threads(self):
+        total = 0
+        for thread in self.spiders.all():
+            total += thread.get_total_thread()
+        return total
 
 class ArticleSpider(models.Model):
     user                        = models.ForeignKey(User, on_delete=models.CASCADE)
