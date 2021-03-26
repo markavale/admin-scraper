@@ -4,7 +4,7 @@ from . models import Scraper, ArticleSpider, ArticleThread, Article, CrawlerSet,
 class ScraperAdmin(admin.ModelAdmin):
     list_display = [
         'user', 'data', 'workers', 'crawler_set',
-        'time_finished', 'is_finished', 'timestamp'
+        'time_finished', 'terminated_process','is_finished', 'timestamp'
     ]
 
 class ArticleSpiderAdmin(admin.ModelAdmin):

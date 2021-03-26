@@ -407,10 +407,9 @@ class CrawlerItemviewset(viewsets.ModelViewSet):
         return CrawlerItem.objects.all().order_by('-timestamp')
 
     def create(self, request, *args, **kwargs):
-        # f = open('test_article_items.json')
-        # test_data = json.load(f)
-        resp_data = {}
-        # data = test_data
+        f = open('test_article_items.json')
+        # data = json.load(f)
+        # resp_data = {}
         data = request.data
         for data in data:
             print("--------------------- crawler set | ITEM")

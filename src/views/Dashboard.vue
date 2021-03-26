@@ -197,11 +197,12 @@ export default {
     lineCap: 'round',
   }),
   computed: {
-    ...mapGetters(["getScrapers", "getCrawlerSets"]),
+    ...mapGetters(["getScrapers", "getCrawlerSets", "getScraperAnalysis"]),
   },
   mounted() {
     this.mountCrawlerSets();
     this.mountScrapers();
+    this.mountScraperAnalysis()
     console.log("mounted");
   },
   methods: {
@@ -210,8 +211,9 @@ export default {
     },
     mountScrapers() {
       this.$store.dispatch("fetchScrapers");
-      //   .then()
-      //   .catch()
+    },
+    mountScraperAnalysis(){
+      this.$store.dispatch("fetchScraperAnalysis")
     },
   },
 };
