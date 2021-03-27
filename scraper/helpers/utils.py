@@ -1,6 +1,7 @@
 from ..models import (Scraper, ArticleSpider, ArticleThread,
                       Article, CrawlerSet, CrawlerItem, ScraperAnalysis)
-
+from ..serializers import (ScraperSerializer, ArticleSpiderSerializer, ArticleThreadSerializer, ArticleSerializer,
+                           CrawlerSetSerializer, CrawlerItemSerializer, ScraperAnalysisSerializer)
 '''
     @ SCRAPER ANALYSIS FUNCTION HELPERS
 '''
