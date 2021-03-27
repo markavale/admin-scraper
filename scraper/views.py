@@ -1,21 +1,47 @@
 from . models import (Scraper, ArticleSpider, ArticleThread,
-                      Article, CrawlerSet, CrawlerItem)
+                      Article, CrawlerSet, CrawlerItem, ScraperAnalysis)
 from . serializers import (ScraperSerializer, ArticleSpiderSerializer, ArticleThreadSerializer, ArticleSerializer,
-                           CrawlerSetSerializer, CrawlerItemSerializer)
-from django.http.response import Http404
-from django.shortcuts import get_object_or_404
-from django.utils import timezone
+                           CrawlerSetSerializer, CrawlerItemSerializer, ScraperAnalysisSerializer)
 from rest_framework.permissions import AllowAny, IsAdminUser, IsAuthenticated
 from rest_framework import viewsets, status, filters
 from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView, ListCreateAPIView
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
-from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.viewsets import ModelViewSet
 from .pagination import CrawlerItemPagination, ScraperPagination, ArticleSpiderPagination, ArticleThreadPagination, ArticlePagination
 # from django_filters.rest_framework import DjangoFilterBackend
 import datetime, time, json, math, statistics
+from .helpers.utils import (get_scraper_analysis, scraper_obj_not_finish, get_article_spider_not_in_use, get_article_thread_not_in_use,
+            get_articles_not_in_use, add_article, get_crawler_crawler_set, save_crawler_item_to_crawler_set
+)
+from django.conf import settings
+
+is_testing = settings.TESTING
+
+'''
+    CBV's FOR SCRAPER ANALYSIS
+'''
+class ScraperAnalysisViewset(viewsets.ModelViewSet):
+    serializer_class = ScraperAnalysisSerializer
+    
+    def get_queryset(self):
+
+        return ScraperAnalysis.objects.all()
+
+    def get_permissions(self):
+        # """
+        # Instantiates and returns the list of permissions that this view requires.
+        # """
+        if self.action == 'list':
+            permission_classes = [IsAuthenticated]
+        elif self.action == 'retrieve':
+            permission_classes = [IsAuthenticated]  # AllowAny
+        elif self.action == 'create':
+            permission_classes = [IsAdminUser]  # AllowAny
+        else:
+            permission_classes = [IsAdminUser]
+        return [permission() for permission in permission_classes]
 
 
 '''
@@ -159,22 +185,26 @@ def delete_necc_data(request):
 @permission_classes([IsAdminUser])
 @api_view(['POST', ])
 def scraper_logic_process(request):
-    # TESTING AREA DATA
     t1 = time.perf_counter()
-    # f = open('test_data.json')
-    # data = json.load(f)
-    # TESTONG AREA END
+    # TESTING AREA DATA
+    if is_testing:
+        f = open('test_data.json')
+        data = json.load(f)
+    # PRODUCTION DATA
+    else:
+        data = request.data
 
-    data = request.data
+    #GET: get scraper analysis object
+    scraper_analysis = get_scraper_analysis(request)
 
     # GET: get crawler set is_finished = False
     crawler_set = get_crawler_crawler_set(request)
+
     # GET: get scraper obj is_finished = False
     scraper = scraper_obj_not_finish(request)
 
     # INITIALIZE split data of fime finished => hour, minute, second
     hour, minute, second = data.get('time_finished').split(':')
-    # hour, minute, second = request.data.get('time_finished').split(':')
 
     # INITIALIZE CHUNKED SPIDERS
     spiders = data.get('spiders')
@@ -185,7 +215,7 @@ def scraper_logic_process(request):
         for spider in spiders:
             # GET or CREATE: get the current not in use spider obj
             spider_obj = get_article_spider_not_in_use(request)
-            print("----------------- : SPIDER INSTANCE START HERE")
+            print("----------------- : SPIDER START")
             # ADD & SAVE: save all article items and add to thread object || LOOP: for loop of all threads for each spider.
             for thread_obj in spider:
                 thread = get_article_thread_not_in_use(request)
@@ -240,6 +270,9 @@ def scraper_logic_process(request):
             int(hour), int(minute), int(second))
         scraper.is_finished = True
         scraper.save()
+        
+        # ADD: add scraper object to scraper analysis object
+        scraper_analysis.scrapers.add(scraper)
 
         # UPDATE: update crawler set in_use into True
         crawler_set.is_finished = True
@@ -247,128 +280,13 @@ def scraper_logic_process(request):
         print("ALL DONE!")
         print(round(time.perf_counter() - t1, 2))
     except Exception as e:
+        print("Error occur when saving scraper data")
         print(e)
 
     # END OF LOGIC :)
     return Response({"message": "Succesfully created Scraper Object"})
 
 
-'''
-    ALL function helpers for SCRAPER OBJECT
-    SCRAPER             => get or create SCRAPER object
-    ARTICLE SPIDER      => get or create ARTICLE SPIDER object
-    ARTICLE THREAD      => get or create ARTICLE THREAD object
-    ARTICLE             => save article
-'''
-# FUNCTION for returning SCRAPER not finish. If exists retrieve, else generate new SCRAPER object is_finished = False.
-
-
-def scraper_obj_not_finish(request):
-    try:
-        crawler_set = get_crawler_crawler_set(request)
-        scraper_obj = Scraper.objects.filter(
-            user=request.user, is_finished=False)
-        if scraper_obj.exists():
-            scraper = scraper_obj[0]
-        else:
-            scraper = Scraper.objects.create(
-                user=request.user, is_finished=False)
-    except Exception as e:
-        print(e)
-
-    return scraper
-
-# FUNCTION for returning article spider not in use. If exists retrive, else generate new ARTICLE SPIDER object in_use = False.
-
-
-def get_article_spider_not_in_use(request):
-    spider_obj = ArticleSpider.objects.filter(user=request.user, in_use=False)
-    if spider_obj.exists():
-        spider = spider_obj[0]
-    else:
-        spider = ArticleSpider.objects.create(user=request.user, in_use=False)
-    return spider
-
-# FUNCTION for returning for not in use article threads. If exists retrieve, else generate new THREAD object in_use = False.
-
-
-def get_article_thread_not_in_use(request):
-    thread_obj = ArticleThread.objects.filter(user=request.user, in_use=False)
-    if thread_obj.exists():
-        thread = thread_obj[0]
-    else:
-        thread = ArticleThread.objects.create(user=request.user, in_use=False)
-    return thread
-
-# FUNCTION for returning not in use artilces
-
-
-def get_articles_not_in_use(request):
-    articles = Article.objects.filter(in_use=False)
-    if articles.exists():
-        return articles
-    else:
-        return Response({"Error": "No articles available"})
-
-# FUNCTION for saving articles
-
-
-def add_article(request, articles):
-    for article in articles:
-        serializer = ArticleSerializer(data=article)
-        if serializer.is_valid():
-            serializer.save()
-            print("article saved!!")
-    article_objs = Article.objects.filter(in_use=False)
-    return
-
-
-'''
-    ALL function helpers for CRAWLER SET OBJECT
-    CRAWLER SET         => get or create CRAWLER SET object
-
-'''
-# FUNCTION for returning crawler set not finish. If exists retrieve, else generate new CRAWLER SET is_finished = False.
-
-
-def get_crawler_crawler_set(request):
-    crawler_set = CrawlerSet.objects.filter(
-        user=request.user, is_finished=False)
-    if crawler_set.exists():
-        crawler_obj = crawler_set[0]
-    else:
-        crawler_obj = CrawlerSet.objects.create(
-            user=request.user, is_finished=False)
-    return crawler_obj
-
-# FUNCTION for saving and adding crawler item.
-
-
-def save_crawler_item_to_crawler_set(self, request, crawler_obj, is_exist):
-    # GET: get all crawler items with in_use = False
-    crawler_items = CrawlerItem.objects.filter(in_use=False)
-    if is_exist:
-        for item in crawler_items:
-            print(item)
-            try:
-                crawler_obj.crawlers.add(item)
-                item.in_use = True
-                item.save()
-                print("{} was successfully added as item crawler".format(item))
-            except Exception as e:
-                print("Error")
-                print(e)
-    else:
-        for item in crawler_items:
-            try:
-                crawler_obj.crawlers.add(item)
-                item.in_use = True
-                item.save()
-                print("{} was successfully added as item crawler".format(item))
-            except Exception as e:
-                print("Error")
-                print(e)
-    return crawler_items
 
 
 class CrawlerSetViewset(viewsets.ModelViewSet):
@@ -407,10 +325,13 @@ class CrawlerItemviewset(viewsets.ModelViewSet):
         return CrawlerItem.objects.all().order_by('-timestamp')
 
     def create(self, request, *args, **kwargs):
-        f = open('test_article_items.json')
-        # data = json.load(f)
-        # resp_data = {}
-        data = request.data
+        resp_data = {}
+        if is_testing:
+            f = open('test_article_items.json')
+            data = json.load(f)
+        else:
+            data = request.data
+        
         for data in data:
             print("--------------------- crawler set | ITEM")
             item_serializer = self.serializer_class(data=data)
@@ -493,8 +414,9 @@ def scrapers_analysis(request):
     parsed_article_list     = list(map(lambda article: article.get_total_parsed_article(), article_data))
 
     # LOGIC for computing an absolute total number of  missed artilces or skip articles
-    missed_article_list     = list(map(lambda scraper:abs(scraper.data - scraper.crawler_set.get_total_articles()) , scrapers))
+    missed_article_list     = list(map(lambda scraper: scraper.get_total_missed_articles(), scrapers))
     
+
     data['total_data']                      = sum(data_list)
     data['total_articles']                  = len(articles)
     data['average_download_latency']        = round(statistics.mean(download_latency_list), 2)
@@ -505,8 +427,6 @@ def scrapers_analysis(request):
     
     data['total_scraping_rounds']           = len(scrapers)
     
-    
-
     return Response(data, status=status.HTTP_200_OK)
 
 

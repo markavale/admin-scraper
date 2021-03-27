@@ -2,7 +2,7 @@ import axios from 'axios'
 import Cookies from 'js-cookie'
 // import { state } from '@/store/modules/user'
 // const APIUrlProduction = 'https://admin-scraper.herokuapp.com/'
-const APIUrlDevelopment = 'http://localhost:8000/'
+const APIUrlDevelopment = 'http://127.0.0.1:8000/'
 const APIUrl = APIUrlDevelopment
 
 // axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');

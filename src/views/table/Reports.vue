@@ -5,11 +5,14 @@
       :items="getScrapers"
       sort-by="parse"
       class="elevation-1 mt-10 pt-10"
+      show-expand
+      :single-expand="true"
+      :expanded.sync="expanded"
       dark
     >
       <template v-slot:top>
         <v-toolbar flat>
-          <v-toolbar-title>Reports</v-toolbar-title>
+          <v-toolbar-title>Scraper Logs</v-toolbar-title>
           <!-- <div v-for="item in getCrawlerSets" :key="item.id">
             {{ item }}
           </div> -->
@@ -90,62 +93,94 @@
           </v-dialog>
         </v-toolbar>
       </template>
-      <!-- <template v-slot:item.name="{ item }">
+
+      <template v-slot:expanded-item="{ headers, item }">
+        <td :colspan="headers.length / 2 + 1">
+          <v-container>
+            <v-card color="#385F73" dark class="mx-auto text--center" height="330px">
+              <v-card-title class="headline"
+                ><v-icon class="mr-2">info</v-icon>Info logs
+              </v-card-title>
+                <v-card-text
+                  class="pa-0 mx-5"
+                  v-for="(text, index) in item.info_log.split(`\\n'`)"
+                  :key="index"
+                  >{{ text }}</v-card-text
+                >
+
+              <v-card-actions>
+                <v-btn text> Listen Now </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-container>
+        </td>
+
+        <td :colspan="headers.length / 2 - 1">
+          <v-container>
+            <v-card color="#db645c" dark height="330px">
+              <v-card-title class="headline">
+                <v-icon class="mr-2">error</v-icon>Error logs
+              </v-card-title>
+
+              <v-card-text
+                class="pa-0 mx-5"
+                v-for="(text, index) in item.info_log.split(`\\n'`)"
+                :key="index"
+                >{{ text }}</v-card-text
+              >
+
+              <v-card-actions>
+                <v-btn text> Listen Now </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-container>
+        </td>
+
+        <!-- </tr> -->
+      </template>
+
+      <template v-slot:item.data="{ item }">
         <span>{{ item.data }}</span>
       </template>
-      <template v-slot:item.spider="{ item }">
+
+      <template v-slot:item.articles="{ item }">
+        {{ item.crawler_set.total_articles }}
+      </template>
+
+      <template v-slot:item.success_parse="{ item }">
+        <v-chip :color="getColor(item.crawler_set.total_parsed_article)" dark>
+          {{ item.crawler_set.total_parsed_article }}
+        </v-chip>
+      </template>
+
+      <template v-slot:item.unsuccess_parse="{ item }">
+        {{ item.crawler_set.total_error }}
+      </template>
+
+      <template v-slot:item.missed_articles="{ item }">
+        {{ item.total_missed_articles }}
+      </template>
+
+      <template v-slot:item.download_latency="{ item }">
+        {{ item.crawler_set.average_download_latency }}
+      </template>
+
+      <template v-slot:item.spiders="{ item }">
         <span>{{ item.workers }}</span>
       </template>
-      <template v-slot:item.thread_spider="{ item }">
-        <span>{{ item.total_threads }}</span>
-      </template>
-      <template v-slot:item.thread_spider="{ item }">
-        <span>{{ item.total_threads }}</span>
-      </template>
-      <template v-slot:item.thread_spider="{ item }">
-        <span>{{ item.total_threads }}</span>
-      </template>
-      <template v-slot:item.thread_spider="{ item }">
-        <span>{{ item.total_threads }}</span>
-      </template> -->
 
-      <!-- <template slot:body="items" slot-scope="props">
-          <tr v-for="scraper in props.items" :key="scraper.id">
-              <td>{{ scraper.data }}</td>
-              <td>{{ scraper.crawler_set.total_parsed_article }}</td>
-          </tr>
-      </template> -->
-      
-      <template v-slot: body="{ items }">
-      <tbody>
-        
-        <tr v-for="scraper in items" :key="scraper.id">
-          <td>
-            {{ scraper.data }}
-          </td>
-          <td>
-            <v-chip :color="getColor(item.parse)" dark>
-              {{ item.crawler_set.total_parsed_article }}
-            </v-chip>
-          </td>
-          <td>
-            {{ scraper.total_threads }}
-          </td>
-          <td>
-            29
-          </td>
-          <td>
-            {{ scraper.crawler_set.average_download_latency }}
-          </td>
-          <td>
-            {{ scraper.time_finished }}
-          </td>
-          <td>
-            {{ scraper.timestamp }}
-          </td>
-        </tr>
-      </tbody>
-    </template>
+      <template v-slot:item.threads="{ item }">
+        <span>{{ item.total_threads }}</span>
+      </template>
+
+      <template v-slot:item.time_finished="{ item }">
+        <span>{{ item.time_finished }}</span>
+      </template>
+
+      <template v-slot:item.date="{ item }">
+        <span>{{ item.timestamp | formDate }}</span>
+      </template>
+
       <template v-slot:item.actions="{ item }">
         <v-icon small class="mr-2" color="success" @click="editItem(item)">
           mdi-pencil
@@ -155,58 +190,70 @@
         </v-icon>
       </template>
       <template v-slot:no-data>
-        <v-btn color="primary" @click="initialize"> Reset </v-btn>
+        <v-btn color="primary"> Reset </v-btn>
       </template>
-      <!-- <template v-slot:item.parse="{ item }">
-        <v-chip :color="getColor(item.parse)" dark>
-          {{ item.crawler_set.total_parsed_article }}
-        </v-chip>
-      </template> -->
     </v-data-table>
+    <div style="color: white">
+      {{ getScrapers.length }}
+    </div>
   </div>
 </template>
 <script>
+// import moment from "moment";
 import { mapGetters } from "vuex";
 export default {
   data: () => ({
+    expanded: [],
     dialog: false,
     dialogDelete: false,
     headers: [
+      { text: "", value: "data-table-expand" },
       {
-        text: "Total Articles",
+        text: "Data",
         align: "center",
-        sortable: false,
-        value: "name",
+        sortable: true,
+        value: "data",
       },
-      { text: "Total parsed articles", value: "parse" },
-      { text: "Total Spiders", value: "spider" },
-      { text: "Total threads", value: "thread_spider" },
-      { text: "Article", value: "article" },
+      { text: "Articles", align: "center", value: "articles" },
+      { text: "Successful parsed articles", value: "success_parse" },
+      { text: "Unsuccessful parse articles", value: "unsuccess_parse" },
+      { text: "Missed articles", value: "missed_articles" },
       { text: "Average download latency", value: "download_latency" },
-      { text: "Time finished", value: "time_finish" },
-      { text: "Date", value: "date" },
+      { text: "Spiders", align: "center", value: "spiders" },
+      { text: "Threads", align: "center", value: "threads" },
+      { text: "Time finished", align: "center", value: "time_finished" },
+      { text: "Date", align: "center", value: "date" },
       { text: "Actions", value: "actions", sortable: false },
     ],
     desserts: [],
     editedIndex: -1,
     editedItem: {
-      name: "",
+      data: 0,
       parse: 0,
       spider: 0,
       thread_spider: 0,
       article: 0,
     },
     defaultItem: {
-      name: "",
-      parse: 0,
-      spider: 0,
-      thread_spider: 0,
-      article: 0,
+      data: 0,
+      articles: 21,
+      success_parse: 0,
+      unsuccess_parse: 0,
+      missed_articles: 0,
       download_latency: 0,
+      spiders: 0,
+      threads: 0,
+      time_finish: 0,
+      date: null,
     },
   }),
 
   computed: {
+    // formDate(value) {
+    //   if (value) {
+    //     return moment(String(value)).format("MM/DD/YYYY hh:mm");
+    //   }
+    // },
     formTitle() {
       return this.editedIndex === -1 ? "New Item" : "Edit Item";
     },
@@ -225,119 +272,12 @@ export default {
     this.mountCrawlerSets();
     this.mountScrapers();
   },
-  created() {
-    this.initialize();
-  },
 
   methods: {
     getColor(parse) {
       if (parse < 200) return "red";
       else if (parse > 400) return "green";
       else return "orange";
-    },
-    initialize() {
-      this.desserts = [
-        {
-          name: 518,
-          parse: 159,
-          spider: 6,
-          thread_spider: 3,
-          article: 29,
-          download_latency: 3.21,
-          time_finish: "00:42:24",
-          date: "2021-03-16T10:38:17.488886+08:00",
-        },
-        {
-          name: 518,
-          parse: 237,
-          spider: 6,
-          thread_spider: 3,
-          article: 29,
-          download_latency: 0.32,
-          time_finish: "00:42:24",
-          date: "2021-03-16T10:38:17.488886+08:00",
-        },
-        {
-          name: 518,
-          parse: 262,
-          spider: 6,
-          thread_spider: 3,
-          article: 29,
-          download_latency: 14.42,
-          time_finish: "00:42:24",
-          date: "2021-03-16T10:38:17.488886+08:00",
-        },
-        {
-          name: 518,
-          parse: 305,
-          spider: 6,
-          thread_spider: 3,
-          article: 29,
-          download_latency: 0.32,
-          time_finish: "00:42:24",
-          date: "2021-03-16T10:38:17.488886+08:00",
-        },
-        {
-          name: 518,
-          parse: 356,
-          spider: 6,
-          thread_spider: 3,
-          article: 29,
-          download_latency: 2.32,
-          time_finish: "00:42:24",
-          date: "2021-03-16T10:38:17.488886+08:00",
-        },
-        {
-          name: 518,
-          parse: 375,
-          spider: 6,
-          thread_spider: 3,
-          article: 29,
-          download_latency: 15.52,
-          time_finish: "00:42:24",
-          date: "2021-03-16T10:38:17.488886+08:00",
-        },
-        {
-          name: 518,
-          parse: 392,
-          spider: 6,
-          thread_spider: 3,
-          article: 29,
-          download_latency: 1.41,
-          time_finish: "00:42:24",
-          date: "2021-03-16T10:38:17.488886+08:00",
-        },
-        {
-          name: 518,
-          parse: 408,
-          spider: 6,
-          thread_spider: 3,
-          article: 29,
-          download_latency: 5.21,
-          time_finish: "00:42:24",
-          date: "2021-03-16T10:38:17.488886+08:00",
-        },
-        {
-          name: 518,
-          parse: 452,
-          spider: 6,
-          thread_spider: 3,
-          article: 29,
-          download_latency: 3.12,
-          time_finish: "00:42:24",
-          date: "2021-03-16T10:38:17.488886+08:00",
-        },
-        {
-          name: 518,
-          parse: 518,
-          spider: 6,
-          thread_spider: 3,
-          article: 29,
-          download_latency: 19.41,
-          time_finish: "00:42:24",
-          date: "2021-03-16T10:38:17.488886+08:00",
-        },
-      ];
     },
 
     editItem(item) {
@@ -387,9 +327,61 @@ export default {
     mountScrapers() {
       this.$store.dispatch("fetchScrapers");
     },
+
+    /**
+     * In a real application this would be a call to fetch() or axios.get()
+     */
+    // fakeApiCall () {
+    //   return new Promise((resolve, reject) => {
+    //     const { sortBy, sortDesc, page, itemsPerPage } = this.options
+
+    //     let items = this.getDesserts()
+    //     const total = items.length
+
+    //     if (sortBy.length === 1 && sortDesc.length === 1) {
+    //       items = items.sort((a, b) => {
+    //         const sortA = a[sortBy[0]]
+    //         const sortB = b[sortBy[0]]
+
+    //         if (sortDesc[0]) {
+    //           if (sortA < sortB) return 1
+    //           if (sortA > sortB) return -1
+    //           return 0
+    //         } else {
+    //           if (sortA < sortB) return -1
+    //           if (sortA > sortB) return 1
+    //           return 0
+    //         }
+    //       })
+    //     }
+
+    //     if (itemsPerPage > 0) {
+    //       items = items.slice((page - 1) * itemsPerPage, page * itemsPerPage)
+    //     }
+
+    //     setTimeout(() => {
+    //       resolve({
+    //         items,
+    //         total,
+    //       })
+    //     }, 1000)
+    //   })
+    // },
   },
 };
 </script>
 
-<style>
+<style scoped>
+/* html {
+  overflow: hidden !important;
+}
+.v-card {
+  display: flex !important;
+  flex-direction: column;
+}
+
+.v-card__text {
+  flex-grow: 1;
+  overflow: auto;
+} */
 </style>

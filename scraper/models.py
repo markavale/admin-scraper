@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+import math, statistics
 
 User = settings.AUTH_USER_MODEL
 
@@ -9,6 +10,41 @@ status_type = [
     ('Processing', 'Processing'),
     ('Queued', 'Queued'),
 ]
+
+class ScraperAnalysis(models.Model):
+    scrapers            = models.ManyToManyField('Scraper')
+
+    class Meta:
+        verbose_name_plural = "Scraper Analysis"
+
+    def __str__(self):
+        return "Scraper Analysis"
+
+    def get_total_data(self):
+        return sum(list(map(lambda scraper: scraper.data, self.scrapers.all())))
+
+    def get_total_articles(self):
+        articles_list           = list(map(lambda scraper:scraper.get_total_articles(), self.scrapers.all()))
+        return sum(articles_list)
+        
+    def get_total_avg_dl(self):
+        download_latency_list = list(map(lambda scraper: scraper.crawler_set.get_avg_dl_latency(), self.scrapers.all()))
+        return round(statistics.mean(download_latency_list), 2)
+
+    def get_total_successfull_parsed(self):
+        parsed_article_list     = list(map(lambda scraper: scraper.crawler_set.get_total_parsed_article(), self.scrapers.all()))
+        return sum(parsed_article_list)
+
+    def get_total_errors(self):
+        # error_list          = list(map(lambda scraper:scraper.crawler_set.get_total_error(), self.scrapers.all()))
+        return sum(list(map(lambda scraper:scraper.crawler_set.get_total_error(), self.scrapers.all())))
+
+    def get_total_missed(self):
+        missed_article_list         = list(map(lambda scraper: scraper.get_total_missed_articles(), self.scrapers.all()))
+        return sum(missed_article_list)
+    
+    def get_total_rounds_of_scraper(self):
+        return self.scrapers.count()
 
 class Scraper(models.Model):
     user                = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -35,6 +71,19 @@ class Scraper(models.Model):
             total += thread.get_total_thread()
         return total
 
+    def get_total_missed_articles(self):
+        data = self.data
+        total_articles = self.crawler_set.get_total_articles()
+        if data > total_articles:
+            return data - total_articles
+        else:
+            catch_miss_article = self.crawler_set.get_total_parsed_article() + self.crawler_set.get_total_error()
+            return total_articles - catch_miss_article
+
+    def get_total_articles(self):
+        articles = list(map(lambda article: article.get_total_articles(), self.spiders.all()))
+        return sum(articles)
+
 class ArticleSpider(models.Model):
     user                        = models.ForeignKey(User, on_delete=models.CASCADE)
     thread_crawlers             = models.ManyToManyField('ArticleThread')
@@ -46,6 +95,10 @@ class ArticleSpider(models.Model):
     def get_total_thread(self):
         return self.thread_crawlers.count()
 
+    def get_total_articles(self):
+        return sum(list(map(lambda article: article.get_total_crawlers(), self.thread_crawlers.all())))
+    
+
 class ArticleThread(models.Model):
     user                = models.ForeignKey(User, on_delete=models.CASCADE)
     articles            = models.ManyToManyField('Article')
@@ -56,6 +109,7 @@ class ArticleThread(models.Model):
 
     def get_total_crawlers(self):
         return self.articles.count()
+
 
 class Article(models.Model):
     url                 = models.URLField()

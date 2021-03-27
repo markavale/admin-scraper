@@ -4,14 +4,14 @@
       <v-col lg="4" cols="sm" class="pb-2">
         <v-card dark color="#232323">
           <v-row class="no-gutters">
-            <div class="col-auto">
-              <div class="cyan fill-height">&nbsp;</div>
+            <div class="col-auto" color="#0b00d4">
+              <div class="cyan fill-height" color="#4719d2">&nbsp;</div>
             </div>
-            <div class="col pa-3 py-4 cyan--text">
+            <div class="col pa-3 py-4" style="color:#4719d2">
               <h5 class="text-truncate text-uppercase">Total data</h5>
               <h1>
                 <!-- {{ getPageViews.total_views }} -->
-                5,180
+                {{ getScraperAnalysis.total_data }}
               </h1>
             </div>
           </v-row>
@@ -20,13 +20,13 @@
       <v-col lg="4" cols="sm" class="pb-2">
         <v-card dark color="#232323">
           <v-row class="no-gutters">
-            <div class="col-auto">
-              <div class="primary fill-height">&nbsp;</div>
+            <div class="col-auto" style="color:#a419d2">
+              <div class="fill-height">&nbsp;</div>
             </div>
-            <div class="col pa-3 py-4 primary--text">
-              <h5 class="text-truncate text-uppercase">Average Download latency</h5>
+            <div class="col pa-3 py-4" style="color:#a419d2">
+              <h5 class="text-truncate text-uppercase">Total articles</h5>
               <!-- <h1>{{ getRatings.rating_computed }}</h1> -->
-              <h1>8.3</h1>
+              <h1>{{ getScraperAnalysis.total_articles }}</h1>
             </div>
           </v-row>
         </v-card>
@@ -34,12 +34,57 @@
       <v-col lg="4" cols="sm" class="pb-2">
         <v-card dark color="#232323">
           <v-row class="no-gutters">
-            <div class="col-auto">
+            <div class="col-auto" style="color:#1975d2">
               <div class="success fill-height">&nbsp;</div>
             </div>
+            <div class="col pa-3 py-4" style="color:#1975d2">
+              <h5 class="text-truncate text-uppercase">Average Download latency</h5>
+              <h1>{{ getScraperAnalysis.average_download_latency }}secs</h1>
+            </div>
+          </v-row>
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col lg="4" cols="sm" class="pb-2">
+        <v-card dark color="#232323">
+          <v-row class="no-gutters">
+            <div class="col-auto" color="#0b00d4">
+              <div class="cyan fill-height" color="#4719d2">&nbsp;</div>
+            </div>
             <div class="col pa-3 py-4 success--text">
-              <h5 class="text-truncate text-uppercase">Success parsed data</h5>
-              <h1>3,464</h1>
+              <h5 class="text-truncate text-uppercase">Successful parsed articles</h5>
+              <h1>
+                <!-- {{ getPageViews.total_views }} -->
+                {{ getScraperAnalysis.successful_parsed_articles }}
+              </h1>
+            </div>
+          </v-row>
+        </v-card>
+      </v-col>
+      <v-col lg="4" cols="sm" class="pb-2">
+        <v-card dark color="#232323">
+          <v-row class="no-gutters">
+            <div class="col-auto" style="color:#a419d2">
+              <div class="fill-height">&nbsp;</div>
+            </div>
+            <div class="col pa-3 py-4 red--text">
+              <h5 class="text-truncate text-uppercase">Unsuccessful parse articles</h5>
+              <!-- <h1>{{ getRatings.rating_computed }}</h1> -->
+              <h1>{{ getScraperAnalysis.unsuccessful_parse_articles }}</h1>
+            </div>
+          </v-row>
+        </v-card>
+      </v-col>
+      <v-col lg="4" cols="sm" class="pb-2">
+        <v-card dark color="#232323">
+          <v-row class="no-gutters">
+            <div class="col-auto" style="color:#1975d2">
+              <div class="success fill-height">&nbsp;</div>
+            </div>
+            <div class="col pa-3 py-4" style="color:#4cacaf">
+              <h5 class="text-truncate text-uppercase" >Missed articles</h5>
+              <h1>{{ getScraperAnalysis.missed_articles }}</h1>
             </div>
           </v-row>
         </v-card>

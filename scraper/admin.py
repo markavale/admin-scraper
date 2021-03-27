@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import Scraper, ArticleSpider, ArticleThread, Article, CrawlerSet, CrawlerItem
+from . models import Scraper, ArticleSpider, ArticleThread, Article, CrawlerSet, CrawlerItem, ScraperAnalysis
 
 class ScraperAdmin(admin.ModelAdmin):
     list_display = [
@@ -25,6 +25,7 @@ class CrawlerItemAdmin(admin.ModelAdmin):
                     'base_error', 'skip_url', 'in_use', 'timestamp',)
     # ordering = ('-date_parsed')
 
+admin.site.register(ScraperAnalysis)
 
 admin.site.register(Scraper, ScraperAdmin)
 admin.site.register(ArticleSpider, ArticleSpiderAdmin)
@@ -33,3 +34,4 @@ admin.site.register(Article, ArticleAdmin)
 
 admin.site.register(CrawlerSet, CrawlerAdmin)
 admin.site.register(CrawlerItem, CrawlerItemAdmin)
+

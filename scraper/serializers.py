@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from . models import Scraper, ArticleSpider, ArticleThread, Article, CrawlerSet, CrawlerItem
+from . models import Scraper, ArticleSpider, ArticleThread, Article, CrawlerSet, CrawlerItem, ScraperAnalysis
 
 class CrawlerItemSerializer(serializers.ModelSerializer):
 
@@ -34,32 +34,46 @@ class ArticleSerializer(serializers.ModelSerializer):
 
 class ArticleThreadSerializer(serializers.ModelSerializer):
     articles = ArticleSerializer(many=True, read_only=True)
-
     class Meta:
         model = ArticleThread
         fields = '__all__'
 
 class ArticleSpiderSerializer(serializers.ModelSerializer):
     thread_crawlers = ArticleThreadSerializer(many=True, read_only=True)
-    
+
     class Meta:
         model = ArticleSpider
         fields = '__all__'
 
 
 class ScraperSerializer(serializers.ModelSerializer):
-    spiders             = ArticleSpiderSerializer(many=True, read_only=False)
-    total_spiders       = serializers.IntegerField(source='get_total_spiders', read_only=True)
-    total_threads       = serializers.IntegerField(source='get_total_threads', read_only=True)
-    crawler_set         = CrawlerSetSerializer(many=False, read_only=True)
+    spiders                 = ArticleSpiderSerializer(many=True, read_only=False)
+    total_spiders           = serializers.IntegerField(source='get_total_spiders', read_only=True)
+    total_threads           = serializers.IntegerField(source='get_total_threads', read_only=True)
+    crawler_set             = CrawlerSetSerializer(many=False, read_only=True)
+    total_missed_articles   = serializers.IntegerField(source='get_total_missed_articles', read_only=True)
 
     class Meta:
         model = Scraper
         fields = '__all__'
 
 
+class ScraperAnalysisSerializer(serializers.ModelSerializer):
+    # scrapers                = ScraperSerializer(many=True, read_only=True)
 
+    total_data                          = serializers.IntegerField(source='get_total_data', read_only=True)
+    total_articles                      = serializers.IntegerField(source='get_total_articles', read_only=True)
+    average_download_latency            = serializers.FloatField(source='get_total_avg_dl', read_only=True)
 
+    successful_parsed_articles          = serializers.IntegerField(source='get_total_successfull_parsed', read_only=True)
+    unsuccessful_parse_articles         = serializers.IntegerField(source='get_total_errors', read_only=True)
+    missed_articles                     = serializers.IntegerField(source='get_total_missed', read_only=True)
+
+    rounds_of_scraper                   = serializers.IntegerField(source='get_total_rounds_of_scraper', read_only=True)
+
+    class Meta:
+        model = ScraperAnalysis
+        fields = '__all__'
 
 
 

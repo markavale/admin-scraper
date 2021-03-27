@@ -59,7 +59,7 @@ const actions = {
   fetchScraperAnalysis: ({commit}) => {
     return new Promise((resolve, reject) => {
       axiosBase
-      .get("api/scraper-analysis/", {
+      .get("api/scraper-analysis1/", {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
           Authorization: `Token ${localStorage.getItem("token")}`,

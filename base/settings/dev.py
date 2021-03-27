@@ -87,3 +87,8 @@ STATIC_ROOT = BASE_DIR / 'staticfiles' # staticfiles for collecting static and f
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+
+'''
+    @ ENV VARIABLES SECTION
+'''
+TESTING = True
