@@ -8,7 +8,7 @@ class CrawlerItemSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class CrawlerSetSerializer(serializers.ModelSerializer):
-    crawlers                                = CrawlerItemSerializer(many=True, read_only=True)
+    # crawlers                                = CrawlerItemSerializer(many=True, read_only=True)
     average_download_latency                = serializers.FloatField(source='get_avg_dl_latency', read_only=True)
     total_http_error                        = serializers.IntegerField(source='get_total_http_error', read_only=True)
     total_dns_error                         = serializers.IntegerField(source='get_total_dns_error', read_only=True)
@@ -47,7 +47,7 @@ class ArticleSpiderSerializer(serializers.ModelSerializer):
 
 
 class ScraperSerializer(serializers.ModelSerializer):
-    spiders                 = ArticleSpiderSerializer(many=True, read_only=False)
+    # spiders                 = ArticleSpiderSerializer(many=True, read_only=False)
     total_spiders           = serializers.IntegerField(source='get_total_spiders', read_only=True)
     total_threads           = serializers.IntegerField(source='get_total_threads', read_only=True)
     crawler_set             = CrawlerSetSerializer(many=False, read_only=True)
