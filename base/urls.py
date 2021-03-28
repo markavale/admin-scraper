@@ -9,10 +9,11 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='index.html')),
     path('login', TemplateView.as_view(template_name='index.html')),
     path('api-auth/', include('rest_framework.urls')),
+    path('api/', include("scraper.urls")),
     path('auth/', include('users.urls')),
     path('api/', include('analytics.urls')),
     path('api/', include("marketing.urls")),
-    path('api/', include("scraper.urls")),
+    
     # path('account/', include('allauth.urls')),
 ]
 

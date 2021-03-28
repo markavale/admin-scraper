@@ -15,7 +15,7 @@ router.register('crawler-sets', CrawlerSetViewset, basename='CrawlerSet')
 router.register('crawler-items', CrawlerItemviewset, basename='CrawlerItemviewset')
 
 urlpatterns = [
-    path('', include(router.urls)),
+    # path('', include(router.urls)),
     path('process-scraper/', scraper_logic_process, name='process-scraper'),
     path('scraper-analysis1/', scrapers_analysis, name='scraper-analysis'),
     path('delete/', delete_necc_data, name='delete'),
