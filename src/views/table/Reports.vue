@@ -94,13 +94,22 @@
         </v-toolbar>
       </template>
 
-      <template v-slot:expanded-item="{ headers, item }">
-        <td :colspan="headers.length / 2 + 1">
-          <v-container>
-            <v-card color="#385F73" dark class="mx-auto text--center" height="330px">
-              <v-card-title class="headline"
-                ><v-icon class="mr-2">info</v-icon>Info logs
-              </v-card-title>
+      <template v-slot:expanded-item="{headers, item }">
+        <td :colspan="headers.length">
+          <v-row no-gutters style="flex-wrap: nowrap">
+          <v-col cols="6"
+          class="flex-grow-0 flex-shrink-1"
+          >
+            <v-container>
+              <v-card
+                color="#385F73"
+                dark
+                class="mx-auto text--center"
+                height="330px"
+              >
+                <v-card-title class="headline"
+                  ><v-icon class="mr-2">info</v-icon>Info logs
+                </v-card-title>
                 <v-card-text
                   class="pa-0 mx-5"
                   v-for="(text, index) in item.info_log.split(`\\n'`)"
@@ -108,35 +117,36 @@
                   >{{ text }}</v-card-text
                 >
 
-              <v-card-actions>
-                <v-btn text> Listen Now </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-container>
+                <v-card-actions>
+                  <v-btn text> Listen Now </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-container>
+          </v-col>
+          <v-col cols="6"
+          class="flex-grow-0 flex-shrink-1"
+          >
+            <v-container>
+              <v-card color="#db645c" dark height="330px">
+                <v-card-title class="headline">
+                  <v-icon class="mr-2">error</v-icon>Error logs
+                </v-card-title>
+
+                <v-card-text
+                  class="pa-0 mx-5"
+                  v-for="(text, index) in item.info_log.split(`\\n'`)"
+                  :key="index"
+                  >{{ text }}</v-card-text
+                >
+
+                <v-card-actions>
+                  <v-btn text> Listen Now </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-container>
+          </v-col>
+        </v-row>
         </td>
-
-        <td :colspan="headers.length / 2 - 1">
-          <v-container>
-            <v-card color="#db645c" dark height="330px">
-              <v-card-title class="headline">
-                <v-icon class="mr-2">error</v-icon>Error logs
-              </v-card-title>
-
-              <v-card-text
-                class="pa-0 mx-5"
-                v-for="(text, index) in item.info_log.split(`\\n'`)"
-                :key="index"
-                >{{ text }}</v-card-text
-              >
-
-              <v-card-actions>
-                <v-btn text> Listen Now </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-container>
-        </td>
-
-        <!-- </tr> -->
       </template>
 
       <template v-slot:item.data="{ item }">
@@ -178,7 +188,7 @@
       </template>
 
       <template v-slot:item.date="{ item }">
-        <span>{{ item.timestamp | formDate }}</span>
+        <span>{{ item.timestamp | formatDate }}</span>
       </template>
 
       <template v-slot:item.actions="{ item }">
@@ -215,10 +225,10 @@ export default {
         value: "data",
       },
       { text: "Articles", align: "center", value: "articles" },
-      { text: "Successful parsed articles", value: "success_parse" },
-      { text: "Unsuccessful parse articles", value: "unsuccess_parse" },
-      { text: "Missed articles", value: "missed_articles" },
-      { text: "Average download latency", value: "download_latency" },
+      { text: "Successful articles", align: "center", value: "success_parse" },
+      { text: "Unsuccessful articles", align: "center", value: "unsuccess_parse" },
+      { text: "Missed articles", align: "center", value: "missed_articles" },
+      { text: "Download latency", align: "center", value: "download_latency" },
       { text: "Spiders", align: "center", value: "spiders" },
       { text: "Threads", align: "center", value: "threads" },
       { text: "Time finished", align: "center", value: "time_finished" },

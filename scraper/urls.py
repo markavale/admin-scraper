@@ -21,3 +21,5 @@ urlpatterns = [
     path('delete/', delete_necc_data, name='delete'),
     path('check-log/', optimize_log_file, name='check-log')
 ]
+
+urlpatterns += router.urls
