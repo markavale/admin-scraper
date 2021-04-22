@@ -54,7 +54,6 @@
             <v-icon>mdi-account</v-icon>
           </v-btn>
         </template>
-<<<<<<< HEAD
         <v-card class="mx-auto" elevation="11" max-width="300" tile>
           <v-list shaped>
             <v-subheader>Hello, {{ user.username }}</v-subheader>
@@ -76,35 +75,6 @@
           </v-list>
         </v-card>
       </v-menu>
-=======
-        <v-card
-    class="mx-auto"
-    elevation="11"
-    max-width="300"
-    tile
-  >
-    <v-list shaped>
-      <v-subheader>Hello, {{ user.username }}</v-subheader>
-      <v-divider></v-divider>
-      <v-list-item-group v-model="item" color="primary">
-        <v-list-item
-          v-for="(item, i) in userDetails"
-          :key="i"
-          :to="item.href"
-        >
-          <v-list-item-icon>
-            <v-icon v-text="item.icon"></v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title v-text="item.text"></v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list-item-group>
-    </v-list>
-  </v-card>
-      </v-menu>
-      <!-- <v-icon>mdi-account</v-icon> -->
->>>>>>> 6ce4a8699944bea75719e586fdba5ff988161f4f
     </v-app-bar>
     <v-navigation-drawer
       v-model="sidebarMenu"
@@ -138,21 +108,13 @@
         </v-btn>
       </v-list-item>
       <v-divider color="white"></v-divider>
-<<<<<<< HEAD
       <!-- <v-list shaped>
-=======
-      <v-list shaped>
->>>>>>> 6ce4a8699944bea75719e586fdba5ff988161f4f
         <v-list-item
           v-for="item in items"
           :key="item.title"
           link
           :to="item.href"
-<<<<<<< HEAD
           active-class="primary--text"
-=======
-          active-class="primary--text "
->>>>>>> 6ce4a8699944bea75719e586fdba5ff988161f4f
         >
           <v-list-item-icon>
             <v-icon color="primary">{{ item.icon }}</v-icon>
@@ -163,7 +125,6 @@
             }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-<<<<<<< HEAD
       </v-list> -->
 
       <v-list shaped>
@@ -216,8 +177,6 @@
             </v-list-item-content>
           </v-list-item>
         </v-list-group>
-=======
->>>>>>> 6ce4a8699944bea75719e586fdba5ff988161f4f
       </v-list>
     </v-navigation-drawer>
     <!-- <v-content> -->
