@@ -1,0 +1,12 @@
+// {
+//   "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+//   "elmType": "div",
+//   "txtContent": "=if([$BOG_x0020_Disposition] == 'Returned (For Checking)', (@currentField='Awaiting User’s Respond'),'some default value here')",
+//   "debugMode": true
+// }
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "txtContent": "test content",
+  "debugMode": true
+}
