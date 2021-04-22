@@ -111,7 +111,6 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='localhost')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 
-
 # Rest auth conf
 CSRF_COOKIE_NAME = "csrftoken"
 
