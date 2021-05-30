@@ -47,6 +47,7 @@ def get_main_parent(request):
     return scrapers
 
 from pprint import pprint
+import re
 # convert_seconds_to_hms_format()
 @permission_classes([IsAdminUser, ])
 @api_view(['GET', ])
@@ -68,7 +69,9 @@ def machine_performance(request):
             articles = [data for article in article_node for data in article.crawlers.all()]  
             # print(articles)
             success_articles = list(filter(lambda data:data.article_status == "Done", articles))            
-            error_articles = list(filter(lambda data:data.article_status == "Error", articles))    
+            error_articles = list(filter(lambda data:data.article_status == "Error", articles))
+            http_errors = list(filter(lambda data:data.article_error_status == re.compile(r'HTTP Error'), error_articles))    
+            no_content = list(filter(lambda data:data.article_error_status == "No content", error_articles))    
             results.append(
                 {
                     "machine": "192.168.3."+k,
@@ -77,7 +80,11 @@ def machine_performance(request):
                     "total_workers": math.ceil(statistics.mean(list(map(lambda data:data['workers'], v)))),
                     "article_analysis": {
                         "total_success_articles": len(success_articles),
-                        "error_articles": len(error_articles)
+                        "error_articles": {
+                            "total_errors": len(error_articles),
+                            "total_http_errors": len(http_errors),
+                            "total_no_content": len(no_content)
+                        }
                     }
                     # "Article Analysis": list(map(lambda data:data['crawler_set'], v))
                     # "total_errors": len(v),
