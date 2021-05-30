@@ -1,0 +1,346 @@
+{
+  "data": 100,
+  "workers": 6,
+  "spiders": [
+    [
+      {
+        "thread_crawlers": [
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          }
+        ]
+      },
+      {
+        "thread_crawlers": [
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          }
+        ]
+      },
+      {
+        "thread_crawlers": [
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "thread_crawlers": [
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          }
+        ]
+      },
+      {
+        "thread_crawlers": [
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          }
+        ]
+      },
+      {
+        "thread_crawlers": [
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "thread_crawlers": [
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          }
+        ]
+      },
+      {
+        "thread_crawlers": [
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          }
+        ]
+      },
+      {
+        "thread_crawlers": [
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "thread_crawlers": [
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          }
+        ]
+      },
+      {
+        "thread_crawlers": [
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          }
+        ]
+      },
+      {
+        "thread_crawlers": [
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "thread_crawlers": [
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          }
+        ]
+      },
+      {
+        "thread_crawlers": [
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          }
+        ]
+      },
+      {
+        "thread_crawlers": [
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "thread_crawlers": [
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          }
+        ]
+      },
+      {
+        "thread_crawlers": [
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          }
+        ]
+      },
+      {
+        "thread_crawlers": [
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          },
+          {
+            "url": "http://www.nytimes.com/2021/02/25/podcasts/still-processing-best-of-the-archives-whitney-houston.html",
+            "article_id": "605abf51d7ca3f780d2163f4"
+          }
+        ]
+      }
+    ]
+  ],
+  "info_log": [
+    "26/03/21 - 11:27:40 - news_extractor - INFO - Total URL(s): 100 \n",
+    "26/03/21 - 11:27:40 - news_extractor - INFO - Total Spider(s) / Worker(s): 6 \n",
+    "26/03/21 - 11:27:41 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:41 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:42 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:42 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:42 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:42 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:41 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:41 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:42 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:42 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:42 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:42 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:41 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:41 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:42 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:42 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:42 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:42 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:41 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:41 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:42 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:42 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:42 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:42 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:41 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:41 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:42 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:42 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:42 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:42 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:42 - news_extractor - INFO - Finished scraping in 0:00:01\n"
+  ],
+  "error_log": [
+    "26/03/21 - 11:27:40 - news_extractor - INFO - Total URL(s): 100 \n",
+    "26/03/21 - 11:27:40 - news_extractor - INFO - Total Spider(s) / Worker(s): 6 \n",
+    "26/03/21 - 11:27:41 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:41 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:42 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:42 - news_extractor - INFO - Spider links: 3\n",
+    "26/03/21 - 11:27:42 - news_extractor - INFO - Finished scraping in 0:00:01\n"
+  ],
+  "time_finished": "0:00:01",
+  "is_finished": true
+}
+
+
+
+,
+  "children": [
+      {
+        "elmType": "span",
+        "txtContent": "=if([$BOGDisposition] == 'Returned (For Checking)', ,'some default value here')"
+      }
+  ]
